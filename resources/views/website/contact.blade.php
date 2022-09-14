@@ -1,6 +1,7 @@
 @extends('website.master.main')
 @section('content')
 
+
 <section class="inner-intro bg-1 bg-overlay-black-70">
     <div class="container">
         <div class="row text-center intro-title">

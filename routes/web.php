@@ -14,15 +14,15 @@ use App\Http\Controllers\WebsiteController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/',[WebsiteController::class,'index']);
 
 
 Route::group(['prefix'=>'vision'],function(){
-    Route::get('/',[WebsiteController::class,'index']);
     Route::get('contact',[WebsiteController::class,'contact']);
     Route::get('cars',[WebsiteController::class,'cars']);
     Route::get('about',[WebsiteController::class,'about']);
     Route::get('faqs',[WebsiteController::class,'faqs']);
+    Route::get('cardetail',[WebsiteController::class,'cardetail']);
 });

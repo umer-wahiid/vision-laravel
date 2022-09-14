@@ -84,17 +84,17 @@
                             <div class="col-md-12 position-relative">
                                 <ul class="menu-logo">
                                     <li>
-                                        <a href="{{url('vision/')}}"><img id="logo_img"
+                                        <a href="{{url('/')}}"><img id="logo_img"
                                                 src="{{asset('website/images/4thlogo.png')}}" alt="logo">
                                         </a>
                                     </li>
                                 </ul>
                                 <ul class="menu-links" style="margin-top: 25px;">
-                                    <li class="active"><a href="{{url('vision/')}}"> Home</a></li>
-                                    <li><a href="{{url('vision/cars')}}">Cars</a></li>
-                                    <li><a href="{{url('vision/about')}}">About</a></li>
-                                    <li><a href="{{url('vision/contact')}}"> Contact</a>
-                                    <li><a href="{{url('vision/faqs')}}">FAQs</a>
+                                    <li class=" {{ request()->is('/') ? 'active' : '' }}"><a href="{{url('/')}}"> Home</a></li>
+                                    <li class=" {{ request()->is('vision/cars*') ? 'active' : '' }}"><a href="{{url('vision/cars')}}">Cars</a></li>
+                                    <li class=" {{ request()->is('vision/about*') ? 'active' : '' }}"><a href="{{url('vision/about')}}">About</a></li>
+                                    <li class=" {{ request()->is('vision/contact*') ? 'active' : '' }}"><a href="{{url('vision/contact')}}"> Contact</a>
+                                    <li class=" {{ request()->is('vision/faqs*') ? 'active' : '' }}"><a href="{{url('vision/faqs')}}">FAQs</a>
                                     </li>
                                 </ul>
                             </div>

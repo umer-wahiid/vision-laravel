@@ -42,13 +42,13 @@
                 <div class="about_img owl-carousel owl-theme" data-nav-arrow="true" data-items="1" data-md-items="1"
                     data-sm-items="1" data-xs-items="1" data-space="0">
                     <div class="item about-img">
-                        <img class="img-fluid" src="images/car/fifteen.jpg" alt="">
+                        <img class="img-fluid" src="{{asset('website/images/car/fifteen.jpg')}}" alt="">
                     </div>
                     <div class="item about-img">
-                        <img class="img-fluid" src="images/car/sixteen.jpg" alt="">
+                        <img class="img-fluid" src="{{asset('website/images/car/sixteen.jpg')}}" alt="">
                     </div>
                     <div class="item about-img">
-                        <img class="img-fluid" src="images/car/seventeen.jpg" alt="">
+                        <img class="img-fluid" src="{{asset('website/images/car/seventeen.jpg')}}" alt="">
                     </div>
                 </div>
             </div>

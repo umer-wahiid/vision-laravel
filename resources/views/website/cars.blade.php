@@ -32,10 +32,10 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="car-item gray-bg text-center">
                             <div class="car-image">
-                                <img class="img-fluid" src="images/car/one.jpg" alt="">
+                                <img class="img-fluid" src="{{asset('website/images/car/one.jpg')}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
+                                        <li><a href="{{url('vision/cardetail')}}"><i class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -59,10 +59,10 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="car-item gray-bg text-center">
                             <div class="car-image">
-                                <img class="img-fluid" src="images/car/two.jpg" alt="">
+                                <img class="img-fluid" src="{{asset('website/images/car/two.jpg')}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
+                                        <li><a href="{{url('vision/cardetail')}}"><i class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -86,10 +86,10 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="car-item gray-bg text-center">
                             <div class="car-image">
-                                <img class="img-fluid" src="images/car/three.jpg" alt="">
+                                <img class="img-fluid" src="{{asset('website/images/car/three.jpg')}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
+                                        <li><a href="{{url('vision/cardetail')}}"><i class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -113,10 +113,10 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="car-item gray-bg text-center">
                             <div class="car-image">
-                                <img class="img-fluid" src="images/car/four.jpg" alt="">
+                                <img class="img-fluid" src="{{asset('website/images/car/four.jpg')}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
+                                        <li><a href="{{url('vision/cardetail')}}"><i class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -140,10 +140,10 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="car-item gray-bg text-center">
                             <div class="car-image">
-                                <img class="img-fluid" src="images/car/five.jpg" alt="">
+                                <img class="img-fluid" src="{{asset('website/images/car/five.jpg')}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
+                                        <li><a href="{{url('vision/cardetail')}}"><i class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -167,10 +167,10 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="car-item gray-bg text-center">
                             <div class="car-image">
-                                <img class="img-fluid" src="images/car/six.jpg" alt="">
+                                <img class="img-fluid" src="{{asset('website/images/car/six.jpg')}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
+                                        <li><a href="{{url('vision/cardetail')}}"><i class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -194,10 +194,10 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="car-item gray-bg text-center">
                             <div class="car-image">
-                                <img class="img-fluid" src="images/car/one.jpg" alt="">
+                                <img class="img-fluid" src="{{asset('website/images/car/one.jpg')}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
+                                        <li><a href="{{url('vision/cardetail')}}"><i class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -221,10 +221,10 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="car-item gray-bg text-center">
                             <div class="car-image">
-                                <img class="img-fluid" src="images/car/three.jpg" alt="">
+                                <img class="img-fluid" src="{{asset('website/images/car/three.jpg')}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
+                                        <li><a href="{{url('vision/cardetail')}}"><i class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -248,10 +248,10 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="car-item gray-bg text-center">
                             <div class="car-image">
-                                <img class="img-fluid" src="images/car/two.jpg" alt="">
+                                <img class="img-fluid" src="{{asset('website/images/car/two.jpg')}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
+                                        <li><a href="{{url('vision/cardetail')}}"><i class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

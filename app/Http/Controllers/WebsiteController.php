@@ -51,6 +51,13 @@ class WebsiteController extends Controller
         return view('website.faqs');
     }
 
+
+
+    public function cardetail()
+    {
+        return view('website.cardetail');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
