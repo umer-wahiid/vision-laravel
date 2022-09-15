@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +36,8 @@ Route::group(['prefix'=>'vision'],function(){
 
 Route::group(['prefix'=>'admin'],function(){
     Route::get('/',[adminController::class,'index']);
-    Route::get('contact',[adminController::class,'contact']);
-    Route::get('cars',[adminController::class,'cars']);
-    Route::get('about',[adminController::class,'about']);
-    Route::get('faqs',[adminController::class,'faqs']);
-    Route::get('cardetail',[adminController::class,'cardetail']);
+    Route::group(['prefix'=>'category'],function(){
+        Route::get('create',[CategoryController::class,'create']);
+        Route::get('show',[CategoryController::class,'show']);
+    });
 });
