@@ -35,9 +35,17 @@ Route::group(['prefix'=>'vision'],function(){
 
 
 Route::group(['prefix'=>'admin'],function(){
+
     Route::get('/',[adminController::class,'index']);
+
     Route::group(['prefix'=>'category'],function(){
         Route::get('create',[CategoryController::class,'create']);
         Route::get('show',[CategoryController::class,'show']);
     });
+
+    Route::group(['prefix'=>'brand'],function(){
+        Route::get('create',[BrandController::class,'create']);
+        Route::get('show',[BrandController::class,'show']);
+    });
+
 });

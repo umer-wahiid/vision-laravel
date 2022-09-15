@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Dashboard</title>
+    <title>Admin Pannel</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -30,23 +30,14 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('dashboard/css/style.css')}}" rel="stylesheet">
-
-
-
-    <link rel="stylesheet" href="{{asset('dashboard/css/dataTables.bootstrap.min.css')}}">
-
-    <style>
-    .form-control {
-        border: 1px solid #27ae60;
-    }
-
-    .navbar .navbar-nav .nav-link.dash {
-        color: var(--primary);
-        background: var(--dark);
-        border-color: var(--primary);
-    }
-    </style>
-
 </head>
 
 <body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <!-- <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div> -->
+        <!-- Spinner End -->

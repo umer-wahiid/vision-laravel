@@ -1,3 +1,12 @@
+
+            </div>
+            <!-- Content End -->
+
+
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+            </div>
+
             <!-- JavaScript Libraries -->
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -8,18 +17,9 @@
             <script src="{{asset('dashboard/lib/tempusdominus/js/moment.min.js')}}"></script>
             <script src="{{asset('dashboard/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
             <script src="{{asset('dashboard/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+
             <!-- Template Javascript -->
-            <script src="{{asset('dashboard/js/main.js')}}"></script>
-
-            <!-- for Datatable -->
-            <script src="{{asset('dashboard/js/jquery.dataTables.js')}}"></script>
-            <script src="{{asset('dashboard/js/dataTables.bootstrap.min.js')}}"></script>
-            <script>
-            $(document).ready(function() {
-                $("#mytable").DataTable();
-            });
-            </script>
-
+            <script src="{{asset('dashboard/js/main.js"></script>
 </body>
 
 </html>
