@@ -35,7 +35,15 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'brand'=>'required|unique:brands'
+        ]);
+
+        $create  = new Brand();
+        $create->brand = $request->brand;
+        $create->save();
+
+        return redirect('dashboard/brand/show');
     }
 
     /**
@@ -46,7 +54,8 @@ class BrandController extends Controller
      */
     public function show(brand $brand)
     {
-        //
+        $show = Brand::get();
+        return view ('admin.brand.show',['show'=>$show]);
     }
 
     /**
@@ -55,9 +64,10 @@ class BrandController extends Controller
      * @param  \App\Models\brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(brand $brand)
+    public function edit(brand $brand,$id)
     {
-        //
+        $edit = Brand::find($id);
+        return view ('admin.brand.edit',['edit'=>$edit]);
     }
 
     /**
@@ -67,9 +77,17 @@ class BrandController extends Controller
      * @param  \App\Models\brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, brand $brand)
+    public function update(Request $request, brand $brand,$id)
     {
-        //
+        $request->validate([
+            'brand'=>'required'
+        ]);
+
+        $create  = Brand::find($id);
+        $create->brand = $request->brand;
+        $create->update();
+
+        return redirect('admin/brand/show');
     }
 
     /**
@@ -78,8 +96,10 @@ class BrandController extends Controller
      * @param  \App\Models\brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy(brand $brand)
+    public function destroy(brand $brand,$id)
     {
-        //
+        $delete = Brand::find($id);
+        $delete->delete();
+        return redirect('admin/brand/show');
     }
 }

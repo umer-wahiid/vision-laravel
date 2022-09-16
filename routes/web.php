@@ -32,20 +32,26 @@ Route::group(['prefix'=>'vision'],function(){
 });
 
 
-
-
 Route::group(['prefix'=>'admin'],function(){
-
-    Route::get('/',[adminController::class,'index']);
 
     Route::group(['prefix'=>'category'],function(){
         Route::get('create',[CategoryController::class,'create']);
+        Route::post('store',[CategoryController::class,'store']);
         Route::get('show',[CategoryController::class,'show']);
+        Route::get('destroy/{id}',[CategoryController::class,'destroy']);
+        Route::get('edit/{id}',[CategoryController::class,'edit']);
+        Route::post('update/{id}',[CategoryController::class,'update']);
     });
+    Route::get('/',[adminController::class,'index']);
 
+    
     Route::group(['prefix'=>'brand'],function(){
         Route::get('create',[BrandController::class,'create']);
+        Route::post('store',[BrandController::class,'store']);
         Route::get('show',[BrandController::class,'show']);
+        Route::get('destroy/{id}',[BrandController::class,'destroy']);
+        Route::get('edit/{id}',[BrandController::class,'edit']);
+        Route::post('update/{id}',[BrandController::class,'update']);
     });
 
 });
