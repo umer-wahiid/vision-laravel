@@ -48,7 +48,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 mb-2 mb-sm-0">
                 <div class="contact-box text-center grey-border mb-4 mb-sm-0">
-                    <i class="fa fa-envelope-o"></i>
+                    <i class="fa fa-envelope"></i>
                     <h5>Email</h5>
                     <p> support@website.com</p>
                 </div>
@@ -124,7 +124,7 @@
             <div class="col-md-4">
                 <div class="feature-box-3 grey-border">
                     <div class="icon">
-                        <i class="fa fa-clock-o"></i>
+                        <i style="font-size:40px;padding-top:14px;" class="fa fa-clock"></i>
                     </div>
                     <div class="content">
                         <h6>opening hours </h6>
@@ -137,7 +137,7 @@
             <div class="col-md-4">
                 <div class="feature-box-3 grey-border">
                     <div class="icon">
-                        <i class="fa fa-support"></i>
+                    <i style="font-size:40px;padding-top:14px;" class="fa fa-phone"></i>
                     </div>
                     <div class="content">
                         <h6>Our Support Center </h6>
@@ -149,7 +149,7 @@
             <div class="col-md-4">
                 <div class="feature-box-3 grey-border mb-0">
                     <div class="icon">
-                        <i class="fa fa-info"></i>
+                        <i style="font-size:40px;padding-top:14px;" class="fa fa-info"></i>
                     </div>
                     <div class="content">
                         <h6>Some Information </h6>
