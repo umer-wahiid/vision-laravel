@@ -43,7 +43,7 @@ class BrandController extends Controller
         $create->brand = $request->brand;
         $create->save();
 
-        return redirect('dashboard/brand/show');
+        return redirect('admin/brand/show');
     }
 
     /**
@@ -64,10 +64,9 @@ class BrandController extends Controller
      * @param  \App\Models\brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(brand $brand,$id)
+    public function edit(brand $brand)
     {
-        $edit = Brand::find($id);
-        return view ('admin.brand.edit',['edit'=>$edit]);
+        //
     }
 
     /**
@@ -77,17 +76,9 @@ class BrandController extends Controller
      * @param  \App\Models\brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, brand $brand,$id)
+    public function update(Request $request, brand $brand)
     {
-        $request->validate([
-            'brand'=>'required'
-        ]);
-
-        $create  = Brand::find($id);
-        $create->brand = $request->brand;
-        $create->update();
-
-        return redirect('admin/brand/show');
+        //
     }
 
     /**

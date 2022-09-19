@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Brand;
 
 class WebsiteController extends Controller
 {

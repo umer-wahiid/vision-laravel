@@ -10,7 +10,7 @@
                 <tr>
                     <th>S.No</th>
                     <th>Categories</th>
-                    <th>Action</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -19,8 +19,6 @@
                     <td>{{++$key}}</td>
                     <td>{{$item->category}}</td>
                     <td>
-                        <a href="{{ url('admin/category/edit') }}/{{$item->id}}"><i
-                                class="fa fa-pen" style="font-size: 18px; padding:5px;"></i></a>
                         <a href="{{ url('admin/category/destroy') }}/{{$item->id}}"><i class="fa fa-trash"
                                 style="font-size: 18px; padding:5px;"></i></a>
                     </td>

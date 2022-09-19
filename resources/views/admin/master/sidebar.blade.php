@@ -24,7 +24,7 @@
                     class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             <div class="nav-item dropdown">
                 <a href="#"
-                    class="nav-link dropdown-toggle {{ request()->is('admin/category/show*') ? 'active' : '' }}"
+                    class="nav-link dropdown-toggle {{ request()->is('admin/category/*') ? 'active' : '' }}"
                     data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Category</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{url('admin/category/create')}}" class="dropdown-item">Add Category</a>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/brand/show*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i
+                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/brand/*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i
                         class="fa fa-laptop me-2"></i>Brand</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{url('admin/brand/create')}}" class="dropdown-item">Add Brand</a>
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/car/show*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i
+                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/car/*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i
                         class="fa fa-laptop me-2"></i>Cars</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{url('admin/car/create')}}" class="dropdown-item">Add Car</a>

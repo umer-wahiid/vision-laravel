@@ -34,15 +34,16 @@ Route::group(['prefix'=>'vision'],function(){
 
 Route::group(['prefix'=>'admin'],function(){
 
+
+    Route::get('/',[adminController::class,'index']);
+
+
     Route::group(['prefix'=>'category'],function(){
         Route::get('create',[CategoryController::class,'create']);
         Route::post('store',[CategoryController::class,'store']);
         Route::get('show',[CategoryController::class,'show']);
         Route::get('destroy/{id}',[CategoryController::class,'destroy']);
-        Route::get('edit/{id}',[CategoryController::class,'edit']);
-        Route::post('update/{id}',[CategoryController::class,'update']);
     });
-    Route::get('/',[adminController::class,'index']);
 
     
     Route::group(['prefix'=>'brand'],function(){
@@ -52,6 +53,16 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('destroy/{id}',[BrandController::class,'destroy']);
         Route::get('edit/{id}',[BrandController::class,'edit']);
         Route::post('update/{id}',[BrandController::class,'update']);
+    });
+
+
+    Route::group(['prefix'=>'car'],function(){
+        Route::get('create',[CarController::class,'create']);
+        Route::post('store',[CarController::class,'store']);
+        Route::get('show',[CarController::class,'show']);
+        Route::get('destroy/{id}',[CarController::class,'destroy']);
+        Route::get('edit/{id}',[CarController::class,'edit']);
+        Route::post('update/{id}',[CarController::class,'update']);
     });
 
 });

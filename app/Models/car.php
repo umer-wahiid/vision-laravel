@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class car extends Model
 {
     use HasFactory;
+    public $table = 'cars';
 }
