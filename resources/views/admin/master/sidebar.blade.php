@@ -33,7 +33,7 @@
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/brand/*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i
-                        class="fa fa-laptop me-2"></i>Brand</a>
+                        class="fa fa-list me-2"></i>Brand</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{url('admin/brand/create')}}" class="dropdown-item">Add Brand</a>
                     <a href="{{url('admin/brand/show')}}" class="dropdown-item">View Brand</a>
@@ -41,7 +41,7 @@
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/car/*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i
-                        class="fa fa-laptop me-2"></i>Cars</a>
+                        class="fa fa-car me-2"></i>Cars</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{url('admin/car/create')}}" class="dropdown-item">Add Car</a>
                     <a href="{{url('admin/car/show')}}" class="dropdown-item">View Car</a>

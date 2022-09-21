@@ -94,9 +94,12 @@ class CarController extends Controller
      * @param  \App\Models\car  $car
      * @return \Illuminate\Http\Response
      */
-    public function edit(car $car)
+    public function edit(car $car,$id)
     {
-        //
+        $category_id = DB::table('categories')->get();
+        $brand_id = DB::table('brands')->get();
+        $edit = Car::find($id);
+        return view ('admin.car.edit',['edit'=>$edit,'category_id'=>$category_id,'brand_id'=>$brand_id]);
     }
 
     /**
@@ -106,9 +109,36 @@ class CarController extends Controller
      * @param  \App\Models\car  $car
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, car $car)
+    public function update(Request $request, car $car,$id)
     {
-        //
+        $request->validate([
+            'category_id'=>'required',
+            'brand_id'=>'required',
+            'car'=>'required|unique:cars',
+            'year'=>'required',
+            'type'=>'required',
+            'mi'=>'required',
+            'price'=>'required',
+            'stock'=>'required',
+        ]);
+
+        $name = $request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->move('dashboard/cars');
+        
+
+        $create  = car::find($id);
+        $create->category_id = $request->category_id;
+        $create->brand_id = $request->brand_id;
+        $create->car = $request->car;
+        $create->year = $request->year;
+        $create->type = $request->type;
+        $create->mi = $request->mi;
+        $create->price = $request->price;
+        $create->stock = $request->stock;
+        $create->image = $path;
+        $create->update();
+
+        return redirect('admin/car/show');
     }
 
     /**
