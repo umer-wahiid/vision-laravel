@@ -29,6 +29,8 @@ Route::group(['prefix'=>'vision'],function(){
     Route::get('about',[WebsiteController::class,'about']);
     Route::get('faqs',[WebsiteController::class,'faqs']);
     Route::get('cardetail',[WebsiteController::class,'cardetail']);
+    Route::get('car_by_category/{id}',[WebsiteController::class,'car_by_category']);
+    Route::get('car_by_brand/{id}',[WebsiteController::class,'car_by_brand']);
 });
 
 

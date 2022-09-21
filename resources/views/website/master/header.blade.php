@@ -75,8 +75,8 @@
         </div>
 
         @php
-        $cat_id = DB::table('categories')->get();
-        $brand_id = DB::table('brands')->get();
+            $cat_id = DB::table('categories')->get();
+            $brand_id = DB::table('brands')->get();
         @endphp
 
         <div class="menu">
@@ -98,21 +98,21 @@
                                     <li class="{{ request()->is('vision/cars*') ? 'active' : '' }}"><a
                                             href="{{url('vision/cars')}}">Cars</a>
                                     </li>
-                                    <li class="{{ request()->is('vision/cars*') ? 'active' : '' }}"><a
+                                    <li class="{{ request()->is('vision/car_by_category*') ? 'active' : '' }}"><a
                                             href="{{url('vision/cars')}}">Category</a>
                                         <ul class="drop-down-multilevel">
                                             @foreach($cat_id as $item)
                                             <li><a
-                                                    href="{{url('car_by_category')}}/{{$item->id}}">{{$item->category}}</a>
+                                                    href="{{url('vision/car_by_category')}}/{{$item->id}}">{{$item->category}}</a>
                                             </li>
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li class="{{ request()->is('vision/cars*') ? 'active' : '' }}"><a
+                                    <li class="{{ request()->is('vision/car_by_brand*') ? 'active' : '' }}"><a
                                             href="{{url('vision/cars')}}">Brand</a>
                                         <ul class="drop-down-multilevel">
                                             @foreach($brand_id as $item)
-                                            <li><a href="{{url('car_by_brand')}}/{{$item->id}}">{{$item->brand}}</a>
+                                            <li><a href="{{url('vision/car_by_brand')}}/{{$item->id}}">{{$item->brand}}</a>
                                             </li>
                                             @endforeach
                                         </ul>

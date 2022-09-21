@@ -1,4 +1,10 @@
 <footer class="footer bg-2 bg-overlay-black-90">
+    @php
+    $cat_id = DB::table('categories')->get();
+    $brand_id = DB::table('brands')->get();
+    $car = DB::table('cars')
+    ->orderBy('updated_at', 'desc')->limit(3)->get();
+    @endphp
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -19,9 +25,8 @@
             <div class="col-lg-3 col-md-6">
                 <div class="about-content">
                     <img class="img-fluid" id="logo-footer" src="{{asset('website/images/4thlogo.png')}}" alt="">
-                    <p>We provide everything you need to build an amazing dealership website developed especially for
-                        car
-                        sellers dealers or auto motor retailers.</p>
+                    <p>Vision Motors Offers All Kind Of Japanese Cars Regardless of
+                         Price Range And Size. Our All Cars Are Legally Imported & Custom Paid.</p>
                 </div>
                 <div class="address">
                     <ul>
@@ -35,56 +40,38 @@
                 <div class="usefull-link">
                     <h6 class="text-white">Useful Links</h6>
                     <ul>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Home</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Contact Us</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Cars</a></li>
-                        <li><a href="#featured"><i class="fa-solid fa-angles-right"></i> Featured</a></li>
-                        <li><a href="#todaysoffer"><i class="fa-solid fa-angles-right"></i> Todays Offer</a></li>
+                        <li><a href="{{url('/')}}"><i class="fa-solid fa-angles-right"></i> Home</a></li>
+                        <li><a href="{{url('vision/contact')}}"><i class="fa-solid fa-angles-right"></i> Contact Us</a></li>
+                        <li><a href="{{url('vision/about')}}"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
+                        <li><a href="{{url('vision/cars')}}"><i class="fa-solid fa-angles-right"></i> Cars</a></li>
+                        <li><a href="{{url('vision/faqs')}}"><i class="fa-solid fa-angles-right"></i> FAQs</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="recent-post-block">
                     <h6 class="text-white">New Arrivals </h6>
+                    @foreach($car as $item)
                     <div class="recent-post">
                         <div class="recent-post-image">
-                            <img class="img-fluid" src="{{asset('website/images/car/one.jpg')}}" alt="">
+                            <img class="img-fluid" src="{{URL($item->image)}}" alt="">
                         </div>
                         <div class="recent-post-info">
-                            <a href="#">Range Rover </a>
-                            <span class="post-date"><i class="fa-solid fa-calendar-days"></i>September 10, 2021</span>
+                            <a href="#">{{$item->car}} </a>
+                            <span class="post-date"><i class="fa-solid fa-calendar-days"></i>{{$item->created_at}}</span>
                         </div>
                     </div>
-                    <div class="recent-post">
-                        <div class="recent-post-image">
-                            <img class="img-fluid" src="{{asset('website/images/car/two.jpg')}}" alt="">
-                        </div>
-                        <div class="recent-post-info">
-                            <a href="#">Lexus </a>
-                            <span class="post-date"><i class="fa-solid fa-calendar-days"></i>September 10, 2021</span>
-                        </div>
-                    </div>
-                    <div class="recent-post">
-                        <div class="recent-post-image">
-                            <img class="img-fluid" src="{{asset('website/images/car/three.jpg')}}" alt="">
-                        </div>
-                        <div class="recent-post-info">
-                            <a href="#">Range Rover Black </a>
-                            <span class="post-date"><i class="fa-solid fa-calendar-days"></i>September 10, 2021</span>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="news-letter">
                     <h6 class="text-white">subscribe Our Newsletter </h6>
-                    <p>Keep up on our always evolving products features and technology. Enter your e-mail and subscribe
-                        to our
-                        newsletter.</p>
+                    <p>Vision Motors was established on 20 April 2021 with a vision to operate Pakistan's most modern, hi-tech and vibrant automotive business. 
+                        Managed by the most experienced industry personnel.</p>
                     <form class="news-letter">
-                        <input type="email" placeholder="Enter your Email" class="form-control placeholder">
-                        <a class="button red" href="#">Subscribe</a>
+                        <!-- <input type="email" placeholder="Enter your Email" class="form-control placeholder"> -->
+                        <a class="button red" href="{{url('vision/about')}}">About Us</a>
                     </form>
                 </div>
             </div>

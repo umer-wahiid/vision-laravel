@@ -284,14 +284,18 @@
                 </div>
             </div>
         </div>
+        @php
+        $car_id = DB::table('cars')->get();
+        @endphp
         <div class="row">
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme" data-nav-arrow="true" data-items="4" data-md-items="4"
                     data-sm-items="2" data-xs-items="1" data-space="20">
+                    @foreach($car_id as $item)
                     <div class="item">
                         <div class="car-item text-center">
                             <div class="car-image">
-                                <img class="img-fluid" src="{{asset('website/images/car/one.jpg')}}" alt="">
+                                <img class="img-fluid" src="{{url($item->image)}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
                                         <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
@@ -300,124 +304,21 @@
                             </div>
                             <div class="car-list">
                                 <ul class="list-inline">
-                                    <li><i class="fa fa-registered"></i> 2021</li>
-                                    <li><i class="fa fa-cog"></i> Manual </li>
-                                    <li><i class="fa fa-dashboard"></i> 6,000 mi</li>
+                                    <li><i class="fa fa-registered"></i> {{$item->year}}</li>
+                                    <li><i class="fa fa-cog"></i> {{$item->type}}</li>
+                                    <li><i class="fa fa-dashboard"></i> {{$item->mi}} mi</li>
                                 </ul>
                             </div>
                             <div class="car-content">
-                                <a href="#">Acura Rsx</a>
+                                <a href="#">{{$item->car}}</a>
                                 <div class="separator"></div>
                                 <div class="price">
-                                    <span class="new-price">$32,698 </span>
+                                    <span class="new-price">${{$item->price}} </span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="car-item text-center">
-                            <div class="car-image">
-                                <img class="img-fluid" src="{{asset('website/images/car/two.jpg')}}" alt="">
-                                <div class="car-overlay-banner">
-                                    <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="car-list">
-                                <ul class="list-inline">
-                                    <li><i class="fa fa-registered"></i>2021</li>
-                                    <li><i class="fa fa-cog"></i>Manual</li>
-                                    <li><i class="fa fa-dashboard"></i>6,000 mi</li>
-                                </ul>
-                            </div>
-                            <div class="car-content">
-                                <a href="#">Lexus GS 450h</a>
-                                <div class="separator"></div>
-                                <div class="price">
-                                    <span class="new-price">$32,698 </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="car-item text-center">
-                            <div class="car-image">
-                                <img class="img-fluid" src="{{asset('website/images/car/three.jpg')}}" alt="">
-                                <div class="car-overlay-banner">
-                                    <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="car-list">
-                                <ul class="list-inline">
-                                    <li><i class="fa fa-registered"></i> 2021</li>
-                                    <li><i class="fa fa-cog"></i> Manual </li>
-                                    <li><i class="fa fa-dashboard"></i> 6,000 mi</li>
-                                </ul>
-                            </div>
-                            <div class="car-content">
-                                <a href="#">GTA 5 Lowriders DLC</a>
-                                <div class="separator"></div>
-                                <div class="price">
-                                    <span class="new-price">$32,698 </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="car-item text-center">
-                            <div class="car-image">
-                                <img class="img-fluid" src="{{asset('website/images/car/four.jpg')}}" alt="">
-                                <div class="car-overlay-banner">
-                                    <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="car-list">
-                                <ul class="list-inline">
-                                    <li><i class="fa fa-registered"></i> 2021</li>
-                                    <li><i class="fa fa-cog"></i> Manual </li>
-                                    <li><i class="fa fa-dashboard"></i> 6,000 mi</li>
-                                </ul>
-                            </div>
-                            <div class="car-content">
-                                <a href="#">Toyota avalon hybrid </a>
-                                <div class="separator"></div>
-                                <div class="price">
-                                    <span class="new-price">$32,698 </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="car-item text-center">
-                            <div class="car-image">
-                                <img class="img-fluid" src="{{asset('website/images/car/five.jpg')}}" alt="">
-                                <div class="car-overlay-banner">
-                                    <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="car-list">
-                                <ul class="list-inline">
-                                    <li><i class="fa fa-registered"></i> 2021</li>
-                                    <li><i class="fa fa-cog"></i> Manual </li>
-                                    <li><i class="fa fa-dashboard"></i> 6,000 mi</li>
-                                </ul>
-                            </div>
-                            <div class="car-content">
-                                <a href="#">Hyundai santa fe sport </a>
-                                <div class="separator"></div>
-                                <div class="price">
-                                    <span class="new-price">$32,698 </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -36,7 +36,9 @@ class WebsiteController extends Controller
 
     public function cars()
     {
-        return view('website.cars');
+        $car = DB::table('cars')
+        ->get();
+        return view('website.cars',['car'=>$car]);
     }
 
 
@@ -58,6 +60,26 @@ class WebsiteController extends Controller
     public function cardetail()
     {
         return view('website.cardetail');
+    }
+
+
+
+    public function car_by_category($id){
+        $category = DB::table('categories')
+        ->join('cars','cars.category_id','=','categories.id')
+        ->where('cars.category_id',$id)
+        ->get();
+        return view ('website.car_by_category',['category'=>$category]);
+    }
+
+
+
+    public function car_by_brand($id){
+        $brand = DB::table('brands')
+        ->join('cars','cars.brand_id','=','brands.id')
+        ->where('cars.brand_id',$id)
+        ->get();
+        return view ('website.car_by_brand',['brand'=>$brand]);
     }
 
     /**

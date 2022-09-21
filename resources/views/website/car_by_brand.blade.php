@@ -22,14 +22,12 @@
 
 <!-- cars  -->
 
-
-
 <section class="product-listing page-section-ptb">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-8">
                 <div class="row">
-                    @foreach($car as $item)
+                    @foreach($brand as $item)
                     <div class="col-lg-4 col-sm-6" style="width:280px;">
                         <div class="car-item gray-bg text-center">
                             <div class="car-image">
@@ -74,4 +72,5 @@
         </div>
     </div>
 </section>
+
 @endsection
