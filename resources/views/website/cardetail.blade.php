@@ -1,18 +1,21 @@
 @extends('website.master.main')
 @section('content')
-
+<!-- @php
+$car = DB::table('cars')->get();
+$category = DB::table('categories')->get();
+@endphp -->
 <section class="inner-intro bg-1 bg-overlay-black-70">
     <div class="container">
         <div class="row text-center intro-title">
             <div class="col-md-6 text-md-start d-inline-block">
-                <h1 class="text-white">Car Name </h1>
+                <h1 class="text-white">{{$cars[0]->car}} </h1>
             </div>
             <div class="col-md-6 text-md-end float-end">
                 <ul class="page-breadcrumb">
-                    <li><a href="index.html"><i class="fa fa-home"></i> Home</a> <i
+                    <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a> <i
                             class="fa fa-angle-double-right"></i></li>
-                    <li><a href="cars.html">Cars</a><i class="fa fa-angle-double-right"></i></li>
-                    <li><span>Car Name</span> </li>
+                    <li><a href="{{url('vision/cars')}}">Cars</a><i class="fa fa-angle-double-right"></i></li>
+                    <li><span>{{$cars[0]->car}}</span> </li>
                 </ul>
             </div>
         </div>
@@ -24,11 +27,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <h3>Hyundai Santa Fe </h3>
+                <h3>{{$cars[0]->car}}</h3>
             </div>
             <div class="col-md-3">
                 <div class="car-price text-md-end">
-                    <strong>$ 69,995</strong>
+                    <strong>$ {{$cars[0]->price}}</strong>
                     <span>Plus Taxes & Licensing</span>
                 </div>
             </div>
@@ -46,7 +49,7 @@
             <div class="col-md-6">
                 <div class="slider-slick">
                     <div class="slider slider-for detail-big-car-gallery">
-                        <img class="img-fluid" src="{{asset('website/images/detail/big/01.jpg')}}" alt="">
+                        <img class="img-fluid" src="{{URl($cars[0]->image)}}" alt="">
                         <img class="img-fluid" src="{{asset('website/images/detail/big/02.jpg')}}" alt="">
                         <img class="img-fluid" src="{{asset('website/images/detail/big/03.jpg')}}" alt="">
                         <img class="img-fluid" src="{{asset('website/images/detail/big/04.jpg')}}" alt="">
@@ -56,7 +59,7 @@
                         <img class="img-fluid" src="{{asset('website/images/detail/big/08.jpg')}}" alt="">
                     </div>
                     <div class="slider slider-nav">
-                        <img class="img-fluid" src="{{asset('website/images/detail/thum/01.jp')}}g" alt="">
+                        <img class="img-fluid" src="{{URl($cars[0]->image)}}" alt="">
                         <img class="img-fluid" src="{{asset('website/images/detail/thum/02.jp')}}g" alt="">
                         <img class="img-fluid" src="{{asset('website/images/detail/thum/03.jp')}}g" alt="">
                         <img class="img-fluid" src="{{asset('website/images/detail/thum/04.jp')}}g" alt="">
@@ -73,10 +76,11 @@
                     <div class="details-block details-weight">
                         <h5>DESCRIPTION</h5>
                         <ul>
-                            <li> <span>Make</span> <strong class="text-end">BMW</strong></li>
+                            <li> <span>Make</span> <strong class="text-end">{{$cars[0]->brand}}</strong></li>
                             <li> <span>Model</span> <strong class="text-end">7-series</strong></li>
-                            <li> <span>Registration date </span> <strong class="text-end">2021</strong></li>
-                            <li> <span>Mileage</span> <strong class="text-end">25,000 mi</strong></li>
+                            <li> <span>Registration Year </span> <strong class="text-end">{{$cars[0]->year}}</strong>
+                            </li>
+                            <li> <span>Mileage</span> <strong class="text-end">{{$cars[0]->mi}} mi</strong></li>
                             <li> <span>Condition</span> <strong class="text-end">New</strong></li>
                             <li> <span>Exterior Color</span> <strong class="text-end">Silver</strong></li>
                             <li> <span>Interior Color</span> <strong class="text-end">Brown (Leather)</strong></li>

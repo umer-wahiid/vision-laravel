@@ -57,10 +57,10 @@ class WebsiteController extends Controller
 
 
 
-    public function cardetail()
-    {
-        return view('website.cardetail');
-    }
+    // public function cardetail()
+    // {
+    //     return view('website.cardetail');
+    // }
 
 
 
@@ -82,6 +82,30 @@ class WebsiteController extends Controller
         return view ('website.car_by_brand',['brand'=>$brand]);
     }
 
+
+
+    public function cardetail($id){
+        $cars = DB::table('categories')
+        ->join('cars','cars.category_id','=','categories.id')
+        ->join('brands','brands.id','=','cars.brand_id')
+        ->where('cars.id',$id)
+        ->select(
+        'cars.car',
+        'cars.id',
+        'cars.year',
+        'cars.mi',
+        'cars.type',
+        'cars.price',
+        'cars.stock',
+        'categories.category',
+        'brands.brand',
+        'cars.image'
+        )
+        ->get();
+
+ 
+        return view ('website.cardetail',['cars'=>$cars]);
+    }
     /**
      * Store a newly created resource in storage.
      *

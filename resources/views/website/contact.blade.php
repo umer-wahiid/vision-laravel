@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-6 text-md-end float-end">
                 <ul class="page-breadcrumb">
-                    <li><a href="index.html"><i class="fa fa-home"></i> Home</a> <i
+                    <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a> <i
                             class="fa fa-angle-double-right"></i></li>
                     <li><span>Contact</span> </li>
                 </ul>

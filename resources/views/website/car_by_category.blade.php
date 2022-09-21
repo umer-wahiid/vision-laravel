@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-6 text-md-end float-end">
                 <ul class="page-breadcrumb">
-                    <li><a href="index.html"><i class="fa fa-home"></i>Home</a> <i class="fa fa-angle-double-right"></i>
+                    <li><a href="{{url('/')}}"><i class="fa fa-home"></i>Home</a> <i class="fa fa-angle-double-right"></i>
                     </li>
                     <li><span>Cars</span></li>
                 </ul>
@@ -35,7 +35,7 @@
                                 <img class="img-fluid" src="{{URL($item->image)}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="{{url('vision/cardetail')}}"><i class="fa-regular fa-eye"></i></a>
+                                        <li><a href="{{url('vision/cardetail')}}/{{$item->id}}"><i class="fa-regular fa-eye"></i></a>
                                         </li>
                                     </ul>
                                 </div>

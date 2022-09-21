@@ -75,8 +75,8 @@
         </div>
 
         @php
-            $cat_id = DB::table('categories')->get();
-            $brand_id = DB::table('brands')->get();
+        $cat_id = DB::table('categories')->get();
+        $brand_id = DB::table('brands')->get();
         @endphp
 
         <div class="menu">
@@ -112,7 +112,8 @@
                                             href="{{url('vision/cars')}}">Brand</a>
                                         <ul class="drop-down-multilevel">
                                             @foreach($brand_id as $item)
-                                            <li><a href="{{url('vision/car_by_brand')}}/{{$item->id}}">{{$item->brand}}</a>
+                                            <li><a
+                                                    href="{{url('vision/car_by_brand')}}/{{$item->id}}">{{$item->brand}}</a>
                                             </li>
                                             @endforeach
                                         </ul>

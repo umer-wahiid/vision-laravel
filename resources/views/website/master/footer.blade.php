@@ -26,7 +26,7 @@
                 <div class="about-content">
                     <img class="img-fluid" id="logo-footer" src="{{asset('website/images/4thlogo.png')}}" alt="">
                     <p>Vision Motors Offers All Kind Of Japanese Cars Regardless of
-                         Price Range And Size. Our All Cars Are Legally Imported & Custom Paid.</p>
+                        Price Range And Size. Our All Cars Are Legally Imported & Custom Paid.</p>
                 </div>
                 <div class="address">
                     <ul>
@@ -40,11 +40,18 @@
                 <div class="usefull-link">
                     <h6 class="text-white">Useful Links</h6>
                     <ul>
-                        <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{url('/')}}"><i class="fa-solid fa-angles-right"></i> Home</a></li>
-                        <li><a class="{{ request()->is('vision/contact*') ? 'active' : '' }}" href="{{url('vision/contact')}}"><i class="fa-solid fa-angles-right"></i> Contact Us</a></li>
-                        <li><a class="{{ request()->is('vision/about*') ? 'active' : '' }}" href="{{url('vision/about')}}"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
-                        <li><a class="{{ request()->is('vision/car*') ? 'active' : '' }}" href="{{url('vision/cars')}}"><i class="fa-solid fa-angles-right"></i> Cars</a></li>
-                        <li><a class="{{ request()->is('vision/faqs*') ? 'active' : '' }}" href="{{url('vision/faqs')}}"><i class="fa-solid fa-angles-right"></i> FAQs</a></li>
+                        <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{url('/')}}"><i
+                                    class="fa-solid fa-angles-right"></i> Home</a></li>
+                        <li><a class="{{ request()->is('vision/contact*') ? 'active' : '' }}"
+                                href="{{url('vision/contact')}}"><i class="fa-solid fa-angles-right"></i> Contact Us</a>
+                        </li>
+                        <li><a class="{{ request()->is('vision/about*') ? 'active' : '' }}"
+                                href="{{url('vision/about')}}"><i class="fa-solid fa-angles-right"></i> About Us</a>
+                        </li>
+                        <li><a class="{{ request()->is('vision/car*') ? 'active' : '' }}"
+                                href="{{url('vision/cars')}}"><i class="fa-solid fa-angles-right"></i> Cars</a></li>
+                        <li><a class="{{ request()->is('vision/faqs*') ? 'active' : '' }}"
+                                href="{{url('vision/faqs')}}"><i class="fa-solid fa-angles-right"></i> FAQs</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,7 +65,8 @@
                         </div>
                         <div class="recent-post-info">
                             <a href="#">{{$item->car}} </a>
-                            <span class="post-date"><i class="fa-solid fa-calendar-days"></i>{{$item->created_at}}</span>
+                            <span class="post-date"><i
+                                    class="fa-solid fa-calendar-days"></i>{{$item->created_at}}</span>
                         </div>
                     </div>
                     @endforeach
@@ -67,7 +75,8 @@
             <div class="col-lg-3 col-md-6">
                 <div class="news-letter">
                     <h6 class="text-white">About Us </h6>
-                    <p>Vision Motors was established on 20 April 2021 with a vision to operate Pakistan's most modern, hi-tech and vibrant automotive business. 
+                    <p>Vision Motors was established on 20 April 2021 with a vision to operate Pakistan's most modern,
+                        hi-tech and vibrant automotive business.
                         Managed by the most experienced industry personnel.</p>
                     <form class="news-letter">
                         <!-- <input type="email" placeholder="Enter your Email" class="form-control placeholder"> -->

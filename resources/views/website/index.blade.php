@@ -38,14 +38,19 @@
                         Vision Motors</div>
 
                     <!-- LAYER NR. t3 -->
-                    <div class="tp-caption button red tp-resizeme" id="slide-5-layer-10" data-x="center" data-hoffset=""
-                        data-y="bottom" data-voffset="130" data-width="['auto']" data-height="['auto']"
-                        data-transform_idle="o:1;" data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power0.easeIn;"
-                        data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);"
-                        data-transform_in="y:bottom;s:600;e:Power2.easeInOut;" data-transform_out="opacity:0;s:300;"
-                        data-start="3300" data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                        style="z-index: 7; white-space: nowrap; font-size: 14px; line-height: 18px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;text-align:center;text-transform:uppercase;background-color:steelblue;padding:12px 20px 12px 20px;border-color:rgba(0, 0, 0, 1.00);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-                        learn more </div>
+                    <div> <a class="tp-caption button red tp-resizeme" id="slide-5-layer-10" data-x="center"
+                            data-hoffset="" data-y="bottom" data-voffset="130" data-width="['auto']"
+                            data-height="['auto']" data-transform_idle="o:1;"
+                            data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power0.easeIn;"
+                            data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);"
+                            data-transform_in="y:bottom;s:600;e:Power2.easeInOut;" data-transform_out="opacity:0;s:300;"
+                            data-start="3300" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                            style="z-index: 7; white-space: nowrap; font-size: 14px; line-height: 18px; font-weight: 400; 
+                            color: rgba(255, 255, 255, 1.00);font-family:Open Sans;text-align:center;text-transform:uppercase;
+                            background-color:steelblue;padding:12px 20px 12px 20px;border-color:rgba(0, 0, 0, 1.00);
+                            outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+                            cursor:pointer;" href="{{url('vision/about')}}">
+                            learn more </a></div>
 
 
                     <!-- IMAGES -->
@@ -119,15 +124,20 @@
                         Your car needs! </div>
 
                     <!-- LAYER NR. t3 -->
-                    <div class="tp-caption button red  tp-resizeme" id="slide-6-layer-10" data-x="center"
-                        data-hoffset="" data-y="bottom" data-voffset="140" data-width="['auto']" data-height="['auto']"
-                        data-transform_idle="o:1;" data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power0.easeIn;"
-                        data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);"
-                        data-transform_in="y:bottom;s:600;e:Power2.easeInOut;" data-transform_out="opacity:0;s:300;"
-                        data-start="5329.8614501953" data-splitin="none" data-splitout="none"
-                        data-responsive_offset="on" data-end="8999.8614501953"
-                        style="z-index: 9; white-space: nowrap; font-size: 14px; line-height: 18px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;text-align:center;text-transform:uppercase;background-color:steelblue;padding:12px 20px 12px 20px;border-color:rgba(0, 0, 0, 1.00);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-                        learn more </div>
+                    <div>
+                        <a class="tp-caption button red  tp-resizeme" id="slide-6-layer-10" data-x="center"
+                            data-hoffset="" data-y="bottom" data-voffset="140" data-width="['auto']"
+                            data-height="['auto']" data-transform_idle="o:1;"
+                            data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power0.easeIn;"
+                            data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);"
+                            data-transform_in="y:bottom;s:600;e:Power2.easeInOut;" data-transform_out="opacity:0;s:300;"
+                            data-start="5329.8614501953" data-splitin="none" data-splitout="none"
+                            data-responsive_offset="on" data-end="8999.8614501953" style="z-index: 9; white-space: nowrap; font-size: 14px; line-height: 18px; font-weight: 400; 
+                            color: rgba(255, 255, 255, 1.00);font-family:Open Sans;text-align:center;text-transform:uppercase;
+                            background-color:steelblue;padding:12px 20px 12px 20px;border-color:rgba(0, 0, 0, 1.00);outline:none;
+                            box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
+                            cursor:pointer;" href="{{url('vision/about')}}"> learn more </a>
+                    </div>
 
 
                     <!-- IMAGES -->
