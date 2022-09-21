@@ -40,11 +40,11 @@
                 <div class="usefull-link">
                     <h6 class="text-white">Useful Links</h6>
                     <ul>
-                        <li><a href="{{url('/')}}"><i class="fa-solid fa-angles-right"></i> Home</a></li>
-                        <li><a href="{{url('vision/contact')}}"><i class="fa-solid fa-angles-right"></i> Contact Us</a></li>
-                        <li><a href="{{url('vision/about')}}"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
-                        <li><a href="{{url('vision/cars')}}"><i class="fa-solid fa-angles-right"></i> Cars</a></li>
-                        <li><a href="{{url('vision/faqs')}}"><i class="fa-solid fa-angles-right"></i> FAQs</a></li>
+                        <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{url('/')}}"><i class="fa-solid fa-angles-right"></i> Home</a></li>
+                        <li><a class="{{ request()->is('vision/contact*') ? 'active' : '' }}" href="{{url('vision/contact')}}"><i class="fa-solid fa-angles-right"></i> Contact Us</a></li>
+                        <li><a class="{{ request()->is('vision/about*') ? 'active' : '' }}" href="{{url('vision/about')}}"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
+                        <li><a class="{{ request()->is('vision/car*') ? 'active' : '' }}" href="{{url('vision/cars')}}"><i class="fa-solid fa-angles-right"></i> Cars</a></li>
+                        <li><a class="{{ request()->is('vision/faqs*') ? 'active' : '' }}" href="{{url('vision/faqs')}}"><i class="fa-solid fa-angles-right"></i> FAQs</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,7 +66,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="news-letter">
-                    <h6 class="text-white">subscribe Our Newsletter </h6>
+                    <h6 class="text-white">About Us </h6>
                     <p>Vision Motors was established on 20 April 2021 with a vision to operate Pakistan's most modern, hi-tech and vibrant automotive business. 
                         Managed by the most experienced industry personnel.</p>
                     <form class="news-letter">
