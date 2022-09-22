@@ -1,6 +1,5 @@
 @extends('admin.master.main')
 @section('content')
-
 <div class="container-fluid pt-4 px-4">
     <div class="container">
 
@@ -17,11 +16,16 @@
                     <th>Mileage</th>
                     <th>Stock</th>
                     <th>Image</th>
+                    <th>More Images</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($show as $key=>$item)
+                @php
+                $image = DB::table('cars')->where('id', $item->id)->first();
+                $images = explode('|', $image->moreimage);
+                @endphp
                 <tr>
                     <td>{{++$key}}</td>
                     <td>{{$item->car}}</td>
@@ -32,6 +36,11 @@
                     <td>{{$item->mi}}</td>
                     <td>{{$item->stock}}</td>
                     <td><img src="{{url($item->image)}}" class="rounded" width="50px" height="40px" alt=""></td>
+                    <td>
+                        @foreach($images as $items)
+                        <img src="{{URL::to($items)}}" class="rounded-circle" width="40px" height="40px" alt="">
+                        @endforeach
+                    </td>
                     <td>
                         <a href="{{ url('admin/car/edit')}}/{{$item->id}}"><i class="fa fa-pen"
                                 style="font-size: 18px; padding:5px;"></i></a>

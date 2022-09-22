@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\brand;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class BrandController extends Controller
 {
@@ -35,15 +37,20 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'brand'=>'required|unique:brands'
-        ]);
-
-        $create  = new Brand();
-        $create->brand = $request->brand;
-        $create->save();
-
-        return redirect('admin/brand/show');
+        if(Auth::user()){
+            $request->validate([
+                'brand'=>'required|unique:brands'
+            ]);
+            
+            $create  = new Brand();
+            $create->brand = $request->brand;
+            $create->save();
+            
+            return redirect('admin/brand/show');
+        }
+        else{
+            return redirect('/');
+        }
     }
 
     /**
@@ -54,8 +61,13 @@ class BrandController extends Controller
      */
     public function show(brand $brand)
     {
-        $show = Brand::get();
-        return view ('admin.brand.show',['show'=>$show]);
+        if(Auth::user()){
+            $show = Brand::get();
+            return view ('admin.brand.show',['show'=>$show]);
+        }
+        else{
+            return redirect('/');
+        }
     }
 
     /**
@@ -89,8 +101,13 @@ class BrandController extends Controller
      */
     public function destroy(brand $brand,$id)
     {
-        $delete = Brand::find($id);
-        $delete->delete();
-        return redirect('admin/brand/show');
+        if(Auth::user()){
+            $delete = Brand::find($id);
+            $delete->delete();
+            return redirect('admin/brand/show');
+        }
+        else{
+            return redirect('/');
+        }
     }
 }

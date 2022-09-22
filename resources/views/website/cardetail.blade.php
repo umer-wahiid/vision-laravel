@@ -50,23 +50,23 @@ $category = DB::table('categories')->get();
                 <div class="slider-slick">
                     <div class="slider slider-for detail-big-car-gallery">
                         <img class="img-fluid" src="{{URl($cars[0]->image)}}" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/big/02.jpg')}}" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/big/03.jpg')}}" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/big/04.jpg')}}" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/big/05.jpg')}}" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/big/06.jpg')}}" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/big/07.jpg')}}" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/big/08.jpg')}}" alt="">
+                        @php
+                        $image = DB::table('cars')->where('id', $cars[0]->id)->first();
+                        $images = explode('|', $image->moreimage);
+                        @endphp
+                        @foreach($images as $items)
+                        <img class="img-fluid" src="{{URL::to($items)}}" alt="">
+                        @endforeach
                     </div>
                     <div class="slider slider-nav">
                         <img class="img-fluid" src="{{URl($cars[0]->image)}}" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/thum/02.jp')}}g" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/thum/03.jp')}}g" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/thum/04.jp')}}g" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/thum/05.jp')}}g" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/thum/06.jp')}}g" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/thum/07.jp')}}g" alt="">
-                        <img class="img-fluid" src="{{asset('website/images/detail/thum/08.jp')}}g" alt="">
+                        @php
+                        $image = DB::table('cars')->where('id', $cars[0]->id)->first();
+                        $images = explode('|', $image->moreimage);
+                        @endphp
+                        @foreach($images as $items)
+                        <img class="img-fluid" src="{{URL::to($items)}}" alt="">
+                        @endforeach
                     </div>
                 </div>
 

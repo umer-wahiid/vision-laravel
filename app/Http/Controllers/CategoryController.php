@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class CategoryController extends Controller
 {
@@ -24,7 +26,12 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        if(Auth::user()){
+            return view('admin.category.create');
+        }
+        else{
+            return redirect('/');
+        }
     }
 
     /**
@@ -35,15 +42,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'category'=>'required|unique:categories'
-        ]);
-
-        $create  = new Category();
-        $create->category = $request->category;
-        $create->save();
-
-        return redirect('admin/category/show');
+        if(Auth::user()){
+            $request->validate([
+                'category'=>'required|unique:categories'
+            ]);
+            
+            $create  = new Category();
+            $create->category = $request->category;
+            $create->save();
+            
+            return redirect('admin/category/show');
+        }
+        else{
+            return redirect('/');
+        }
     }
 
     /**
@@ -54,8 +66,13 @@ class CategoryController extends Controller
      */
     public function show(category $category)
     {
-        $show = Category::get();
-        return view ('admin.category.show',['show'=>$show]);
+        if(Auth::user()){
+            $show = Category::get();
+            return view ('admin.category.show',['show'=>$show]);
+        }
+        else{
+            return redirect('/');
+        }
     }
 
     /**
@@ -66,8 +83,13 @@ class CategoryController extends Controller
      */
     public function edit(category $category,$id)
     {
-        $edit = Category::find($id);
-        return view ('admin.category.edit',['edit'=>$edit]);
+        if(Auth::user()){
+            $edit = Category::find($id);
+            return view ('admin.category.edit',['edit'=>$edit]);
+        }
+        else{
+            return redirect('/');
+        }
     }
 
     /**
@@ -79,15 +101,20 @@ class CategoryController extends Controller
      */
     public function update(Request $request, category $category,$id)
     {
-        $request->validate([
-            'category'=>'required'
-        ]);
-
-        $create  = Category::find($id);
-        $create->category = $request->category;
-        $create->update();
-
-        return redirect('admin/category/show');
+        if(Auth::user()){
+            $request->validate([
+                'category'=>'required'
+            ]);
+            
+            $create  = Category::find($id);
+            $create->category = $request->category;
+            $create->update();
+            
+            return redirect('admin/category/show');
+        }
+        else{
+            return redirect('/');
+        }
     }
 
     /**
@@ -98,8 +125,13 @@ class CategoryController extends Controller
      */
     public function destroy(category $category,$id)
     {
-        $delete = Category::find($id);
-        $delete->delete();
-        return redirect('admin/category/show');
+        if(Auth::user()){
+            $delete = Category::find($id);
+            $delete->delete();
+            return redirect('admin/category/show');
+        }
+        else{
+            return redirect('/');
+        }
     }
 }

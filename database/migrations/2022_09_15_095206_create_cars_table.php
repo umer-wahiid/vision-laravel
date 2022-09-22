@@ -24,6 +24,7 @@ class CreateCarsTable extends Migration
             $table->integer('price');
             $table->string('stock');
             $table->string('image',1000);
+            $table->string('moreimage',10000);
             $table->timestamps();
         });
     }

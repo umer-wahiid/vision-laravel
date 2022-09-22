@@ -6,6 +6,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,10 @@ use App\Http\Controllers\CarController;
 
 
 Route::get('/',[WebsiteController::class,'index']);
+Route::get('/login',[AuthController::class,'create']);
+Route::get('/logout',[AuthController::class,'logout']);
+Route::post('/storelogin',[AuthController::class,'storelogin']);
+// Route::post('/store',[AuthController::class,'store']);
 
 
 Route::group(['prefix'=>'vision'],function(){

@@ -90,6 +90,15 @@
                     </td>
                 </tr>
                 <tr>
+                    <td style="text-align:center;padding-top:14px;text-align:left;"><b>More Images</b></td>
+                    <td>
+                        <input style="background-color:black;color:steelblue;"
+                            accept='image/jpeg , image/jpg, image/gif, image/png' multiple type="file" required
+                            name="moreimage[]" class="form-control input">
+                        <span class="text-danger">@error('moreimage'){{$message}}@enderror</span>
+                    </td>
+                </tr>
+                <tr>
                     <td></td>
                     <td class="td"><input type="submit" value="Add Car" name="btn"
                             class="form-control submit btn btn-outline-secondary"></td>
