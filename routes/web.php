@@ -6,6 +6,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
 
 /*
@@ -23,9 +24,10 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/',[WebsiteController::class,'index']);
 Route::get('/login',[AuthController::class,'create']);
+Route::get('/1001@s@i@g@n@u@p',[AuthController::class,'signup']);
 Route::get('/logout',[AuthController::class,'logout']);
 Route::post('/storelogin',[AuthController::class,'storelogin']);
-// Route::post('/store',[AuthController::class,'store']);
+Route::post('/store',[AuthController::class,'store']);
 
 
 Route::group(['prefix'=>'vision'],function(){
@@ -43,6 +45,14 @@ Route::group(['prefix'=>'admin'],function(){
 
 
     Route::get('/',[adminController::class,'index']);
+
+
+    Route::group(['prefix'=>'contact'],function(){
+        Route::post('store',[ContactController::class,'store']);
+        Route::get('show',[ContactController::class,'show']);
+        Route::get('reply/{id}',[ContactController::class,'reply']);
+        Route::get('destroy/{id}',[ContactController::class,'destroy']);
+    });
 
 
     Route::group(['prefix'=>'category'],function(){
@@ -69,7 +79,9 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('show',[CarController::class,'show']);
         Route::get('destroy/{id}',[CarController::class,'destroy']);
         Route::get('edit/{id}',[CarController::class,'edit']);
+        Route::get('editimage/{id}',[CarController::class,'editimage']);
         Route::post('update/{id}',[CarController::class,'update']);
+        Route::post('updateimage/{id}',[CarController::class,'updateimage']);
     });
 
 });

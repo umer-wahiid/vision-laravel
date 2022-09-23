@@ -8,23 +8,24 @@
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
             <div class="position-relative">
-                <img class="rounded-circle" src="{{asset('dashboard/img/user.jpg')}}" alt=""
-                    style="width: 40px; height: 40px;">
+                <img class="rounded-circle" src="{{Auth::user()->image}}" alt="" style="width: 40px; height: 40px;">
                 <div
                     class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
                 </div>
             </div>
             <div class="ms-3">
-                <h6 class="mb-0">Khalid Ahmed</h6>
+                <h6 class="mb-0">{{Auth::user()->name}}</h6>
                 <span>Admin</span>
             </div>
         </div>
         <div class="navbar-nav w-100">
             <a href="{{url('admin')}}" class="nav-item nav-link {{ request()->is('admin') ? 'active' : '' }}"><i
                     class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <a href="{{url('admin/contact/show')}}"
+                class="nav-item nav-link {{ request()->is('admin/contact/*') ? 'active' : '' }}"><i
+                    class="fa fa-tachometer-alt me-2"></i>Messages</a>
             <div class="nav-item dropdown">
-                <a href="#"
-                    class="nav-link dropdown-toggle {{ request()->is('admin/category/*') ? 'active' : '' }}"
+                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/category/*') ? 'active' : '' }}"
                     data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Category</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{url('admin/category/create')}}" class="dropdown-item">Add Category</a>
@@ -32,16 +33,16 @@
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/brand/*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i
-                        class="fa fa-list me-2"></i>Brand</a>
+                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/brand/*') ? 'active' : '' }}"
+                    data-bs-toggle="dropdown"><i class="fa fa-list me-2"></i>Brand</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{url('admin/brand/create')}}" class="dropdown-item">Add Brand</a>
                     <a href="{{url('admin/brand/show')}}" class="dropdown-item">View Brand</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/car/*') ? 'active' : '' }}" data-bs-toggle="dropdown"><i
-                        class="fa fa-car me-2"></i>Cars</a>
+                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/car/*') ? 'active' : '' }}"
+                    data-bs-toggle="dropdown"><i class="fa fa-car me-2"></i>Cars</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{url('admin/car/create')}}" class="dropdown-item">Add Car</a>
                     <a href="{{url('admin/car/show')}}" class="dropdown-item">View Car</a>
@@ -81,9 +82,9 @@
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <img class="rounded-circle me-lg-2" src="{{asset('dashboard/img/user.jpg')}}" alt=""
+                    <img class="rounded-circle me-lg-2" src="{{Auth::user()->image}}" alt=""
                         style="width: 40px; height: 40px;">
-                    <span class="d-none d-lg-inline-flex">John Doe</span>
+                    <span class="d-none d-lg-inline-flex">{{Auth::user()->name}}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                     <a href="#" class="dropdown-item">My Profile</a>

@@ -68,37 +68,43 @@
                         <div id="formmessage" class="form-notice" style="display:none;">Success/Error Message Goes Here
                         </div>
                         <form class="form-horizontal" id="contactform" role="form" method="post"
-                            action="php/contact-form.php">
+                            action="{{URL('admin/contact/store')}}">
+                            @csrf
                             <div class="contact-form row">
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="mb-3">
                                         <input id="contactform_name" type="text" placeholder="Name*"
                                             class="form-control" name="name">
+                                        <span class="text-danger">@error('name'){{$message}}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="mb-3">
                                         <input id="contactform_email" type="email" placeholder="Email*"
                                             class="form-control" name="email">
+                                        <span class="text-danger">@error('email'){{$message}}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="mb-3">
                                         <input id="contactform_phone" type="text" placeholder="Phone*"
                                             class="form-control" name="phone">
+                                        <span class="text-danger">@error('phone'){{$message}}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <textarea id="contactform_message" class="form-control input-message"
                                             placeholder="Comment*" rows="7" name="message"></textarea>
+                                        <span class="text-danger">@error('message'){{$message}}@enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="hidden" name="action" value="sendEmail" />
-                                    <button id="submit" name="submit" type="submit" value="Send" class="button red">Send
-                                        your message <i class="fa fa-spinner fa-spin fa-fw btn-loader"
-                                            style="display: none;"></i></button>
+                                    <!-- <input type="hidden" name="action" value="sendEmail" /> -->
+                                    <button type="submit" name="btn" value="Send" class="button red">Send
+                                        your message </button>
+                                    <!-- <i class="fa fa-spinner fa-spin fa-fw btn-loader"
+                                            style="display: none;"></i> -->
                                 </div>
                             </div>
                         </form>
@@ -137,7 +143,7 @@
             <div class="col-md-4">
                 <div class="feature-box-3 grey-border">
                     <div class="icon">
-                    <i style="font-size:40px;padding-top:14px;" class="fa fa-phone"></i>
+                        <i style="font-size:40px;padding-top:14px;" class="fa fa-phone"></i>
                     </div>
                     <div class="content">
                         <h6>Our Support Center </h6>

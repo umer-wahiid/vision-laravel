@@ -31,6 +31,12 @@ class AuthController extends Controller
         return view ('admin.login');
     }
 
+
+    public function signup()
+    {
+        return view ('admin.signup');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -39,34 +45,25 @@ class AuthController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-            // 'name'=>'required',
-            // 'username'=>'required|unique:users',
-            // 'email'=>'required|unique:users',
-            // 'address'=>'required',
-            // 'contact'=>'required|unique:users',
-        //     'password'=>'required',
-        // ]);
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|unique:users',
+            'password'=>'required',
+        ]);
 
 
-        // $name = $request->file('image')->getClientOriginalName();
-        // $path = $request->file('image')->move('admin/assets/users_images');
+        $name = $request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->move('dashboard/admins');
 
 
-        // $create  = new User();
-        // $create->role_id = '2';
-        // $create->name = $request->name;
-        // $create->username = $request->username;
-        // $create->email = $request->email;
-        // $create->contact = $request->contact;
-        // $create->address = $request->address;
-        // $create->country = $request->country;
-        // $create->city = $request->city;
-        // $create->image = $path;
-        // $create->password = Hash::make($request->password);
-        // $create->save();
+        $create  = new User();
+        $create->name = $request->name;
+        $create->email = $request->email;
+        $create->password = Hash::make($request->password);
+        $create->image = $path;
+        $create->save();
 
-        // return redirect('/login');
+        return redirect('/login');
     }
 
 

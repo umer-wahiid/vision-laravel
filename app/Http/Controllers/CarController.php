@@ -55,6 +55,8 @@ class CarController extends Controller
                 'mi'=>'required',
                 'price'=>'required',
                 'stock'=>'required',
+                'image'=>'required',
+                'moreimage'=>'required',
             ]);
             
             
@@ -137,6 +139,20 @@ class CarController extends Controller
         }
     }
 
+
+    public function editimage(car $car,$id)
+    {
+        if(Auth::user()){
+            $category_id = DB::table('categories')->get();
+            $brand_id = DB::table('brands')->get();
+            $editimage = Car::find($id);
+            return view ('admin.car.editimage',['editimage'=>$editimage,'category_id'=>$category_id,'brand_id'=>$brand_id]);
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -148,8 +164,8 @@ class CarController extends Controller
     {
         if(Auth::user()){
             $request->validate([
-                'category_id'=>'required',
-            'brand_id'=>'required',
+            // 'category_id'=>'required',
+            // 'brand_id'=>'required',
             'car'=>'required|unique:cars',
             'year'=>'required',
             'type'=>'required',
@@ -158,20 +174,60 @@ class CarController extends Controller
             'stock'=>'required',
         ]);
         
-        $name = $request->file('image')->getClientOriginalName();
-        $path = $request->file('image')->move('dashboard/cars');
+        // $name = $request->file('image')->getClientOriginalName();
+        // $path = $request->file('image')->move('dashboard/cars');
         
         
         $create  = car::find($id);
-        $create->category_id = $request->category_id;
-        $create->brand_id = $request->brand_id;
+        // $create->category_id = $request->category_id;
+        // $create->brand_id = $request->brand_id;
         $create->car = $request->car;
         $create->year = $request->year;
         $create->type = $request->type;
         $create->mi = $request->mi;
         $create->price = $request->price;
         $create->stock = $request->stock;
+        // $create->image = $path;
+        $create->update();
+        
+        return redirect('admin/car/show');
+    }
+    else{
+        return redirect('/');
+    }
+    }
+
+
+
+    public function updateimage(Request $request, car $car,$id)
+    {
+        if(Auth::user()){
+            $request->validate([
+            'category_id'=>'required',
+            'brand_id'=>'required',
+            'image'=>'required',
+            'moreimage'=>'required',
+        ]);
+        
+        $name = $request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->move('dashboard/cars');
+        $image = array();
+        $files = $request->file('moreimage');
+        foreach ($files as $file) {
+            $image_name = md5(rand(1000, 10000));
+            $ext = strtolower ($file->getClientOriginalExtension());
+            $image_full_name = $image_name.'.'.$ext;
+            $upload_path = 'public/dashboard/cars/';
+            $image_url = $upload_path.$image_full_name;
+            $file->move($upload_path, $image_full_name);
+            $image[] = $image_url;
+        };
+        
+        $create  = car::find($id);
+        $create->category_id = $request->category_id;
+        $create->brand_id = $request->brand_id;
         $create->image = $path;
+        $create->moreimage = implode('|', $image);
         $create->update();
         
         return redirect('admin/car/show');

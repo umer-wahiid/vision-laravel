@@ -4,12 +4,12 @@
 <div class="container-fluid pt-4 px-4">
     <div class="container">
         <center>
-            <h1>Edit</h1>
+            <h1 style="color:steelblue;">Edit <span style="color:white;">{{$edit->car}}</span> Details</h1>
         </center>
         <form action="{{url('admin/car/update')}}/{{$edit->id}}" enctype="multipart/form-data" method="POST">
             @csrf
             <table class="table">
-                <tr>
+                <!-- <tr>
                     <td style="text-align:center;padding-top:14px;text-align:left;width:20%;"><b>Category</b></td>
                     <td>
                         <select style="background-color:black;" class="form-control" name="category_id"
@@ -32,7 +32,7 @@
                         </select>
                         <span class="text-danger">@error('brand_id'){{$message}}@enderror</span>
                     </td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td style="text-align:center;padding-top:14px;text-align:left;"><b>Car Name</b></td>
                     <td>
@@ -85,7 +85,7 @@
                         <span class="text-danger">@error('stock'){{$message}}@enderror</span>
                     </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td style="text-align:center;padding-top:14px;text-align:left;"><b>Image</b></td>
                     <td>
                         <img src="{{url($edit->image)}}" class="rounded" width="60px" height="45px" alt="">
@@ -94,14 +94,21 @@
                             class="form-control input">
                         <span class="text-danger">@error('image'){{$message}}@enderror</span>
                     </td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td></td>
-                    <td class="td"><input type="submit" value="Add Car" name="btn"
+                    <td class="td"><input type="submit" value="Submit" name="btn"
                             class="form-control submit btn btn-outline-secondary"></td>
                 </tr>
             </table>
         </form>
+        <table class="table">
+            <tr>
+                <td width="30%"></td>
+                <td class="td"><a href="{{ url('admin/car/editimage')}}/{{$edit->id}}" Type="button"
+                        class="form-control submit btn btn-outline-secondary">Edit Images </a></td>
+            </tr>
+        </table>
 
 
     </div>
