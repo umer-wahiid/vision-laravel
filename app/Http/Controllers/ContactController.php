@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Mail\Reply;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,6 +33,21 @@ class ContactController extends Controller
         //
     }
 
+
+    public function replymail(Request $request,$id)
+    {
+        $name = $request->name;
+        $email = $request->email;
+        $phone = $request->phone;
+        $message = $request->message;
+        
+        // $name = Contact::find($id)->name;
+        // $email = Contact::find($id)->email;
+        // $phone = Contact::find($id)->phone;
+        Mail::to($email)->send(new Reply(($name),($email),($phone)));
+        $show = Contact::get();
+        return view ('admin.contact.show',['show'=>$show]);
+    }
     /**
      * Store a newly created resource in storage.
      *

@@ -34,7 +34,7 @@ Route::group(['prefix'=>'vision'],function(){
     Route::get('contact',[WebsiteController::class,'contact']);
     Route::get('cars',[WebsiteController::class,'cars']);
     Route::get('about',[WebsiteController::class,'about']);
-    Route::get('faqs',[WebsiteController::class,'faqs']);
+    Route::get('faqs',[WebsiteController::class,'faqs']); 
     Route::get('car_by_category/{id}',[WebsiteController::class,'car_by_category']);
     Route::get('car_by_brand/{id}',[WebsiteController::class,'car_by_brand']);
     Route::get('cardetail/{id}',[WebsiteController::class,'cardetail']);
@@ -51,6 +51,7 @@ Route::group(['prefix'=>'admin'],function(){
         Route::post('store',[ContactController::class,'store']);
         Route::get('show',[ContactController::class,'show']);
         Route::get('reply/{id}',[ContactController::class,'reply']);
+        Route::post('replymail/{id}',[ContactController::class,'replymail']);
         Route::get('destroy/{id}',[ContactController::class,'destroy']);
     });
 
