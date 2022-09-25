@@ -41,10 +41,7 @@ class ContactController extends Controller
         $phone = $request->phone;
         $message = $request->message;
         
-        // $name = Contact::find($id)->name;
-        // $email = Contact::find($id)->email;
-        // $phone = Contact::find($id)->phone;
-        Mail::to($email)->send(new Reply(($name),($email),($phone)));
+        Mail::to($email)->send(new Reply(($name),($email),($phone),($message)));
         $show = Contact::get();
         return view ('admin.contact.show',['show'=>$show]);
     }

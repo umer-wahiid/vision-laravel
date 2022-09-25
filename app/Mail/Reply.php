@@ -14,16 +14,18 @@ class Reply extends Mailable
     public $name;
     public $email;
     public $phone;
+    public $message;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name,$email,$phone)
+    public function __construct($name,$email,$phone,$message)
     {
         $this->name = $name;
         $this->email = $email;
         $this->phone = $phone;
+        $this->message = $message;
     }
     // public function __construct($email)
     // {
@@ -41,6 +43,6 @@ class Reply extends Mailable
      */
     public function build()
     {
-        return $this->view('admin.mailview');
+        return $this->from('visionmotors@gmail.com')->markdown('admin.mailview');
     }
 }

@@ -1,0 +1,155 @@
+laravel mail work:
+
+--Commands:
+1.php artisan make:mail Reply
+	--this will create 'App/Mail/Reply.php'.
+2.php artisan vendor:publish --tag=laravel-mail
+	--this will create 'resources/vies/vendor/mail'.
+
+
+
+
+
+--now create a view file for email like 'resources/views/admin/mailview.blade.php'.
+
+
+
+
+
+--controller function:
+
+    public function replymail(Request $request,$id)
+    {
+        $name = $request->name;
+        $email = $request->email;
+        $phone = $request->phone;
+        $message = $request->message;
+        
+        Mail::to($email)->send(new Reply(($name),($email),($phone),($message)));
+        $show = Contact::get();
+        return view ('admin.contact.show',['show'=>$show]);
+    }
+
+
+
+
+
+
+
+
+
+
+--App/Mail/Reply.php:
+
+<?php
+
+namespace App\Mail;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
+
+class Reply extends Mailable
+{
+    use Queueable, SerializesModels;
+
+    public $name;
+    public $email;
+    public $phone;
+    public $message;
+    /**
+     * Create a new message instance.
+     *
+     * @return void
+     */
+    public function __construct($name,$email,$phone,$message)
+    {
+        $this->name = $name;
+        $this->email = $email;
+        $this->phone = $phone;
+        $this->message = $message;
+    }
+    // public function __construct($email)
+    // {
+    //     $this->email = $email;
+    // }
+    // public function __construct($phone)
+    // {
+    //     $this->phone = $phone;
+    // }
+
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        return $this->from('visionmotors@gmail.com')->markdown('admin.mailview');
+    }
+}
+
+
+
+
+
+
+
+
+--resources/views/admin/mailview.blade.php:
+
+@component('mail::message')
+
+
+{{$message}} 
+
+
+@component('mail::button', ['url' => 'http://127.0.0.1:8000/'])
+Visite Site
+@endcomponent
+
+
+@endcomponent
+
+
+
+
+
+Website to check mail:  https://mailtrap.io/inboxes/1901791/messages/3027320024
+video for guidance : https://www.youtube.com/watch?v=xigpoxOW1MY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

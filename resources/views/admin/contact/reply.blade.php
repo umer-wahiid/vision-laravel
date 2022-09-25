@@ -33,7 +33,7 @@
                     <td style="text-align:center;padding-top:14px;text-align:left;"><b>Reply</b></td>
                     <td>
                         <textarea style="border:1px solid steelblue;" id="contactform_message"
-                            class="form-control input-message" placeholder="Reply..." rows="7"
+                            class="form-control input-message" required placeholder="Reply..." rows="7"
                             name="message"></textarea>
                         <span class="text-danger">@error('reply'){{$message}}@enderror</span>
                     </td>
