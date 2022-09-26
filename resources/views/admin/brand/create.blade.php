@@ -14,7 +14,7 @@
                     <td><b></b></td>
                     <td style="text-align:center;"><b> Brand Name </b></td>
                     <td>
-                        <input type="text" required name="brand" placeholder="Brand Name" class="form-control input">
+                        <input style="border:1px solid steelblue;" type="text" required name="brand" placeholder="Brand Name" class="form-control input">
                         <span class="text-danger">@error('brand'){{$message}}@enderror</span>
                     </td>
                     <td><b></b></td>

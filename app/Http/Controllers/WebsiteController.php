@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Brand;
+use App\Models\Car;
 use Illuminate\Support\Facades\Auth;
 
 

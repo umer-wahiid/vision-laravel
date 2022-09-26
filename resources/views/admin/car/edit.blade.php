@@ -36,7 +36,7 @@
                 <tr>
                     <td style="text-align:center;padding-top:14px;text-align:left;"><b>Car Name</b></td>
                     <td>
-                        <input type="text" required name="car" placeholder="Car Name" value="{{$edit->car}}"
+                        <input style="border:1px solid steelblue;" type="text" required name="car" placeholder="Car Name" value="{{$edit->car}}"
                             class="form-control input">
                         <span class="text-danger">@error('car'){{$message}}@enderror</span>
                     </td>
@@ -44,7 +44,7 @@
                 <tr>
                     <td style="text-align:center;padding-top:14px;text-align:left;"><b>Year</b></td>
                     <td>
-                        <input type="text" value="{{$edit->year}}" required name="year" placeholder="Model Year"
+                        <input style="border:1px solid steelblue;" type="text" value="{{$edit->year}}" required name="year" placeholder="Model Year"
                             class="form-control input">
                         <span class="text-danger">@error('year'){{$message}}@enderror</span>
                     </td>
@@ -52,7 +52,7 @@
                 <tr>
                     <td style="text-align:center;padding-top:14px;text-align:left;"><b>Drive Type</b></td>
                     <td>
-                        <select style="background-color:black;" value="{{$edit->type}}" class="form-control" name="type"
+                        <select style="background-color:black;border:1px solid steelblue;" value="{{$edit->type}}" class="form-control" name="type"
                             value="Select Category" placeholder="Select Category">
                             <option value="Auto">Auto</option>
                             <option value="Manual">Manual</option>
@@ -64,7 +64,7 @@
                 <tr>
                     <td style="text-align:center;padding-top:14px;text-align:left;"><b>Mileage</b></td>
                     <td>
-                        <input type="text" required name="mi" value="{{$edit->mi}}" placeholder="Mileage"
+                        <input style="border:1px solid steelblue;" type="text" required name="mi" value="{{$edit->mi}}" placeholder="Mileage"
                             class="form-control input">
                         <span class="text-danger">@error('mi'){{$message}}@enderror</span>
                     </td>
@@ -72,7 +72,7 @@
                 <tr>
                     <td style="text-align:center;padding-top:14px;text-align:left;"><b>Price</b></td>
                     <td>
-                        <input type="number" required name="price" value="{{$edit->price}}" placeholder="Price"
+                        <input style="border:1px solid steelblue;" type="number" required name="price" value="{{$edit->price}}" placeholder="Price"
                             class="form-control input">
                         <span class="text-danger">@error('price'){{$message}}@enderror</span>
                     </td>
@@ -80,7 +80,7 @@
                 <tr>
                     <td style="text-align:center;padding-top:14px;text-align:left;"><b>Stock</b></td>
                     <td>
-                        <input type="text" required name="stock" value="{{$edit->stock}}" placeholder="Stock"
+                        <input style="border:1px solid steelblue;" type="text" required name="stock" value="{{$edit->stock}}" placeholder="Stock"
                             class="form-control input">
                         <span class="text-danger">@error('stock'){{$message}}@enderror</span>
                     </td>

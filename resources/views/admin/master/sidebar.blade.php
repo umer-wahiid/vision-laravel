@@ -1,3 +1,9 @@
+@php
+
+$message = DB::table('contacts')->get();
+
+@endphp
+
 <!-- Sidebar Start -->
 <div class="sidebar pe-4 pb-3">
     <nav class="navbar bg-secondary navbar-dark">
@@ -23,7 +29,7 @@
                     class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             <a href="{{url('admin/contact/show')}}"
                 class="nav-item nav-link {{ request()->is('admin/contact/*') ? 'active' : '' }}"><i
-                    class="fa fa-tachometer-alt me-2"></i>Messages</a>
+                    class="fa fa-envelope me-2"></i>Messages</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/category/*') ? 'active' : '' }}"
                     data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Category</a>
@@ -73,6 +79,19 @@
                     <i class="fa fa-envelope me-lg-2"></i>
                     <span class="d-none d-lg-inline-flex">Message</span>
                 </a>
+                <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                    @foreach($message as $item)
+                    <a href="#" class="dropdown-item">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <h6 class="fw-normal mb-0">{{$item->name}}</h6>
+                                <small>{{$item->created_at}}</small>
+                            </div>
+                        </div>
+                    </a>
+                    <hr class="dropdown-divider">
+                    @endforeach
+                </div>
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">

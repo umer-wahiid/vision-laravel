@@ -14,7 +14,7 @@
                     <td><b></b></td>
                     <td style="text-align:center;"><b> Category Name </b></td>
                     <td>
-                        <input type="text" required name="category" placeholder="Category Name"
+                        <input style="border:1px solid steelblue;" type="text" required name="category" placeholder="Category Name"
                             class="form-control input">
                         <span class="text-danger">@error('category'){{$message}}@enderror</span>
                     </td>
