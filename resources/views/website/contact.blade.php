@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="display:flex;justify-content:center;align-items:center;">
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="contact-box text-center grey-border">
                     <i class="fa fa-map-marker"></i>
@@ -51,13 +51,6 @@
                     <i class="fa fa-envelope"></i>
                     <h5>Email</h5>
                     <p> support@website.com</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="contact-box text-center mb-0 grey-border">
-                    <i class="fa fa-fax"></i>
-                    <h5>Fax</h5>
-                    <p>(007) 123 456 7890</p>
                 </div>
             </div>
         </div>

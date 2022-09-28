@@ -1,6 +1,7 @@
 @php
 
-$message = DB::table('contacts')->get();
+$message = DB::table('contacts')
+->orderBy('created_at', 'desc')->limit(4)->get();
 
 @endphp
 
@@ -95,19 +96,13 @@ $message = DB::table('contacts')->get();
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <i class="fa fa-bell me-lg-2"></i>
-                    <span class="d-none d-lg-inline-flex">Notificatin</span>
-                </a>
-            </div>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                     <img class="rounded-circle me-lg-2" src="{{Auth::user()->image}}" alt=""
                         style="width: 40px; height: 40px;">
                     <span class="d-none d-lg-inline-flex">{{Auth::user()->name}}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                    <a href="#" class="dropdown-item">My Profile</a>
-                    <a href="#" class="dropdown-item">Settings</a>
+                    <a href="{{url('/')}}" class="dropdown-item">View Site</a>
+                    <a href="{{url('admin/car/show')}}" class="dropdown-item">Cars</a>
                     <a href="{{url('/logout')}}" class="dropdown-item">Log Out</a>
                 </div>
             </div>

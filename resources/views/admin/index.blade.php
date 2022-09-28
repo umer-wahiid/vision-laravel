@@ -7,13 +7,13 @@ $carcount = DB::table('cars')->count();
 $brandcount = DB::table('brands')->count();
 $categorycount = DB::table('categories')->count();
 $messagecount = DB::table('contacts')->count();
-$message = DB::table('contacts')->get();
+$message = DB::table('contacts')->orderBy('created_at', 'desc')->limit(4)->get();
 
 $cars = DB::table('categories')
 ->join('cars','cars.category_id','=','categories.id')
 ->join('brands','brands.id','=','cars.brand_id')
 ->select('cars.id','cars.created_at','cars.car','categories.category','brands.brand','cars.year','cars.type','cars.mi','cars.price','cars.stock','cars.image')
-->get();
+->orderBy('created_at', 'desc')->limit(5)->get();
 
 
 @endphp
@@ -189,42 +189,6 @@ $cars = DB::table('categories')
                         <td>{{$item->type}}</td>
                         <td>{{$item->price}}</td>
                     </tr>
-                    <!-- <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>Paid</td>
-                        <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                    </tr>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>Paid</td>
-                        <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                    </tr>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>Paid</td>
-                        <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                    </tr>
-                    <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>Paid</td>
-                        <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                    </tr> -->
                     @endforeach
                 </tbody>
             </table>

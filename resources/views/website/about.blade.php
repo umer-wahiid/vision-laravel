@@ -1,6 +1,8 @@
 @extends('website.master.main')
 @section('content')
-
+@php
+$carcount = DB::table('cars')->count();
+@endphp
 <section class="inner-intro bg-1 bg-overlay-black-70">
     <div class="container">
         <div class="row text-center intro-title">
@@ -112,7 +114,7 @@
                     <div class="info">
                         <h6 class="text-white">Vehicles in Stock</h6>
                         <i class="glyph-icon flaticon-beetle"></i>
-                        <b class="timer text-white" data-to="561" data-speed="10000"></b>
+                        <b class="timer text-white" data-to="{{$carcount}}" data-speed="1000"></b>
                     </div>
                 </div>
             </div>
@@ -122,7 +124,7 @@
                     <div class="info">
                         <h6 class="text-white">Happy Customer</h6>
                         <i class="glyph-icon flaticon-circle"></i>
-                        <b class="timer text-white" data-to="789" data-speed="10000"></b>
+                        <b class="timer text-white" data-to="89" data-speed="1000"></b>
                     </div>
                 </div>
             </div>

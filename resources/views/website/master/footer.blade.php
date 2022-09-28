@@ -3,7 +3,7 @@
     $cat_id = DB::table('categories')->get();
     $brand_id = DB::table('brands')->get();
     $car = DB::table('cars')
-    ->orderBy('updated_at', 'desc')->limit(3)->get();
+    ->orderBy('created_at', 'desc')->limit(3)->get();
     @endphp
     <div class="container">
         <div class="row">

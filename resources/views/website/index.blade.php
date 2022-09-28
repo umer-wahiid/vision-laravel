@@ -1,6 +1,8 @@
 @extends('website.master.main')
 @section('content')
-
+@php
+$carcount = DB::table('cars')->count();
+@endphp
 
 <section class="slider">
     <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="car-dealer-03"
@@ -295,7 +297,7 @@
             </div>
         </div>
         @php
-        $car_id = DB::table('cars')->get();
+        $car_id = DB::table('cars')->orderBy('created_at', 'desc')->limit(6)->get();
         @endphp
         <div class="row">
             <div class="col-md-12">
@@ -308,7 +310,7 @@
                                 <img class="img-fluid" src="{{url($item->image)}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="cardetail.html"><i class="fa-regular fa-eye"></i></a></li>
+                                        <li><a href="{{url('vision/cardetail')}}/{{$item->id}}"><i class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -370,8 +372,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title">
-                    <span>What We Offers ?</span>
-                    <h2>Our Cars</h2>
+                    <span>Our Service</span>
+                    <h2>What We Offers ?</h2>
                     <div class="separator"></div>
                 </div>
             </div>
@@ -379,7 +381,7 @@
         <div class="blog-1">
             <div class="row">
                 <div class="col-md-6">
-                    <img class="img-fluid" src="{{asset('website/images/blog/01.jpg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('website/images/blog/one.jpg')}}" alt="">
                 </div>
                 <div class="col-md-6">
                     <div class="blog-content">
@@ -394,7 +396,7 @@
                             options and most of all, personal feedback on your queries and suggestions.
                             We believe in customer's satisfaction as our success depends on your success.</p>
                         <p>So, What Are You Waiting For !</p>
-                        <a class="button border" href="#">Buy Your Dream Car</a>
+                        <a class="button border" href="{{URL('vision/cars')}}">Buy Your Dream Car</a>
                     </div>
                 </div>
             </div>
@@ -439,14 +441,14 @@
                 <div class="counter-block">
                     <i class="glyph-icon flaticon-beetle"></i>
                     <h6 class="text-black">Vehicles In Stock </h6>
-                    <b class="timer" data-to="3968" data-speed="10000"></b>
+                    <b class="timer" data-to="{{$carcount}}" data-speed="1000"></b>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6 text-center">
                 <div class="counter-block mb-4 mb-sm-0">
                     <i class="glyph-icon flaticon-circle"></i>
                     <h6 class="text-black">Happy Customer</h6>
-                    <b class="timer" data-to="8908" data-speed="10000"></b>
+                    <b class="timer" data-to="89" data-speed="10000"></b>
                 </div>
             </div>
         </div>
@@ -486,7 +488,6 @@
                                 <div class="testimonial-avtar">
                                     <img class="img-fluid" src="{{asset('website/images/team/one.jpg')}}" alt="">
                                     <h6>Alice Williams</h6>
-                                    <span>Auto Dealer</span>
                                 </div>
                                 <div class="testimonial-content">
                                     <p>It has survived not only five centuries. lorem Ipsum is simply dummy text of
@@ -506,7 +507,6 @@
                                 <div class="testimonial-avtar">
                                     <img class="img-fluid" src="{{asset('website/images/team/two.jpg')}}" alt="">
                                     <h6>Michael Bean</h6>
-                                    <span>Car Dealer</span>
                                 </div>
                                 <div class="testimonial-content">
                                     <p>A galley of type and bled it to make a type specimen book. Ipsum is simply
@@ -526,7 +526,6 @@
                                 <div class="testimonial-avtar">
                                     <img class="img-fluid" src="{{asset('website/images/team/three.jpg')}}" alt="">
                                     <h6>Felica Queen</h6>
-                                    <span>Auto Dealer</span>
                                 </div>
                                 <div class="testimonial-content">
                                     <p>Text of the printin a galley of type and bled it to a type specimen book. It
@@ -546,7 +545,6 @@
                                 <div class="testimonial-avtar">
                                     <img class="img-fluid" src="{{asset('website/images/team/four.jpg')}}" alt="">
                                     <h6>Sara Lisbon</h6>
-                                    <span>Customer</span>
                                 </div>
                                 <div class="testimonial-content">
                                     <p>Printin a galley of type and bled It has survived not lorem Ipsum is simply

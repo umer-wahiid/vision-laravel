@@ -211,24 +211,34 @@ $category = DB::table('categories')->get();
             <div class="col-md-3">
                 <div class="car-details-sidebar">
                     <div class="details-form contact-2 details-weight">
-                        <form class="gray-form" action="post" id="send_enquiry_form">
+                        <form class="gray-form" method="post" action="{{URL('admin/contact/store')}}" id="send_enquiry_form">
+                            @csrf
                             <h5>SEND ENQUIRY</h5>
                             <div id="send_enquiry_notice" class="form-notice" style="display:none;"></div>
-                            <input type="hidden" name="action" value="send_enquiry" />
+                            <!-- <input type="hidden" name="action" value="send_enquiry" /> -->
                             <div class="mb-3">
                                 <label class="form-label">Name*</label>
-                                <input type="text" class="form-control" placeholder="Name" name="send_enquiry_name"
+                                <input type="text" class="form-control" placeholder="Name" name="name"
                                     id="send_enquiry_name">
+                                    <span class="text-danger">@error('name'){{$message}}@enderror</span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Phone*</label>
+                                <input type="text" class="form-control" placeholder="Phone Number" name="phone"
+                                    id="send_enquiry_email">
+                                    <span class="text-danger">@error('phone'){{$message}}@enderror</span>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Email address*</label>
-                                <input type="text" class="form-control" placeholder="Email" name="send_enquiry_email"
+                                <input type="text" class="form-control" placeholder="Email" name="email"
                                     id="send_enquiry_email">
+                                    <span class="text-danger">@error('email'){{$message}}@enderror</span>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Meassge* </label>
-                                <textarea class="form-control" rows="4" placeholder="Message"
-                                    name="send_enquiry_message" id="send_enquiry_message"></textarea>
+                                <textarea class="form-control" rows="4" placeholder="message"
+                                    name="message" id="send_enquiry_message"></textarea>
+                                    <span class="text-danger">@error('message'){{$message}}@enderror</span>
                             </div>
                             <div class="mb-3">
                                 <div id="recaptcha6"
@@ -236,8 +246,10 @@ $category = DB::table('categories')->get();
                                 </div>
                             </div>
                             <div>
+                            <button type="submit" name="btn" value="Send" class="button red">Send
+<!-- 
                                 <a class="button red" id="send_enquiry_submit" href="javascript:void(0)">Submit <i
-                                        class="fa fa-spinner fa-spin fa-fw btn-loader" style="display: none;"></i></a>
+                                        class="fa fa-spinner fa-spin fa-fw btn-loader" style="display: none;"></i></a> -->
                             </div>
                         </form>
                     </div>

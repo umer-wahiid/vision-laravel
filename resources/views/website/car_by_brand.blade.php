@@ -57,7 +57,7 @@
                     </div>
                     @endforeach
                 </div>
-                <div class="pagination-nav d-flex justify-content-center">
+                <!-- <div class="pagination-nav d-flex justify-content-center">
                     <ul class="pagination">
                         <li><a href="#">«</a></li>
                         <li class="active"><a href="#">1</a></li>
@@ -67,7 +67,7 @@
                         <li><a href="#">5</a></li>
                         <li><a href="#">»</a></li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
