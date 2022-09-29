@@ -1,6 +1,8 @@
 @extends('website.master.main')
 @section('content')
-
+@php
+    $faqs = DB::table('faqs')->get();
+@endphp
 
 <section class="inner-intro bg-1 bg-overlay-black-70">
     <div class="container">
@@ -51,7 +53,7 @@
                                             What do I need to know before buying a car?
                                         </button>
                                     </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                    <div id="collapseOne" class="accordion-collapse collapse"
                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample01">
                                         <div class="accordion-body">
                                             <h6>You will begin to realize why this exercise?</h6>

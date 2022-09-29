@@ -62,7 +62,7 @@
 
     </div>
 </div>
-<script>
+<!-- <script>
 var dd = document.getElementById('')
-</script>
+</script> -->
 @endsection

@@ -32,6 +32,14 @@ $message = DB::table('contacts')
                 class="nav-item nav-link {{ request()->is('admin/contact/*') ? 'active' : '' }}"><i
                     class="fa fa-envelope me-2"></i>Messages</a>
             <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/faq/*') ? 'active' : '' }}"
+                    data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>FAQs</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="{{url('admin/faq/create')}}" class="dropdown-item">Add Faq</a>
+                    <a href="{{url('admin/faq/show')}}" class="dropdown-item">Manage Faq</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/category/*') ? 'active' : '' }}"
                     data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Category</a>
                 <div class="dropdown-menu bg-transparent border-0">

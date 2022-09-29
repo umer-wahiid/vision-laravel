@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\AuthController;
 
 /*
@@ -55,6 +56,13 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('destroy/{id}',[ContactController::class,'destroy']);
     });
 
+
+    Route::group(['prefix'=>'faq'],function(){
+        Route::get('create',[FaqController::class,'create']);
+        Route::post('store',[FaqController::class,'store']);
+        Route::get('show',[FaqController::class,'show']);
+        Route::get('destroy/{id}',[FaqController::class,'destroy']);
+    });
 
     Route::group(['prefix'=>'category'],function(){
         Route::get('create',[CategoryController::class,'create']);

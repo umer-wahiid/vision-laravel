@@ -19,8 +19,8 @@
                     <td>{{++$key}}</td>
                     <td>{{$item->category}}</td>
                     <td>
-                        <a href="{{ url('admin/category/destroy') }}/{{$item->id}}"><i class="fa fa-trash"
-                                style="font-size: 18px; padding:5px;"></i></a>
+                        <a href="{{ url('admin/category/destroy') }}/{{$item->id}}">
+                            <i class="fa fa-trash" style="font-size: 18px; padding:5px;"></i></a>
                     </td>
                 </tr>
                 @endforeach
