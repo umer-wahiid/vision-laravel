@@ -351,11 +351,11 @@ $carcount = DB::table('cars')->count();
                 <div class="custom-block-1">
                     <h2 style="font-size: 60px;">Range Rover</h2>
                     <span>Get the Rover You always Wanted </span>
-                    <strong class="text-red">30,000,000 PKR</strong>
+                    <strong class="text-red">Best Price</strong>
                     <span>Best Price</span>
                     <span>Latest Model</span>
                     <p>Limited time Offer!</p>
-                    <a href="#"> read more </a>
+                    <a href="{{url('vision/cars')}}"> read more </a>
                 </div>
             </div>
         </div>

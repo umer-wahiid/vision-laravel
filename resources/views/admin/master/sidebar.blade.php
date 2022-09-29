@@ -40,6 +40,14 @@ $message = DB::table('contacts')
                 </div>
             </div>
             <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/review/*') ? 'active' : '' }}"
+                    data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Reviews</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="{{url('admin/review/create')}}" class="dropdown-item">Add Review</a>
+                    <a href="{{url('admin/review/show')}}" class="dropdown-item">Manage Reviews</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/category/*') ? 'active' : '' }}"
                     data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Category</a>
                 <div class="dropdown-menu bg-transparent border-0">

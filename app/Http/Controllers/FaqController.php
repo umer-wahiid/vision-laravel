@@ -88,9 +88,15 @@ class FaqController extends Controller
      * @param  \App\Models\faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(faq $faq)
+    public function edit(faq $faq,$id)
     {
-        //
+        if(Auth::user()){
+            $edit = Faq::find($id);
+            return view ('admin.faq.edit',['edit'=>$edit]);
+        }
+        else{
+            return redirect('admin/faq/show');
+        }
     }
 
     /**
@@ -100,9 +106,25 @@ class FaqController extends Controller
      * @param  \App\Models\faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, faq $faq)
+    public function update(Request $request, faq $faq,$id)
     {
-        //
+     
+            if(Auth::user()){
+                $request->validate([
+                'question'=>'required',
+                'answer'=>'required',
+            ]);
+            
+            $create  = faq::find($id);
+            $create->question = $request->question;
+            $create->answer = $request->answer;
+            $create->update();
+            
+            return redirect('admin/faq/show');
+        }
+        else{
+            return redirect('/');
+        }
     }
 
     /**

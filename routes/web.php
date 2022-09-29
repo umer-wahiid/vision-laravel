@@ -9,6 +9,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,11 +44,11 @@ Route::group(['prefix'=>'vision'],function(){
 
 
 Route::group(['prefix'=>'admin'],function(){
-
-
+    
+    
     Route::get('/',[adminController::class,'index']);
-
-
+    
+    
     Route::group(['prefix'=>'contact'],function(){
         Route::post('store',[ContactController::class,'store']);
         Route::get('show',[ContactController::class,'show']);
@@ -55,14 +56,27 @@ Route::group(['prefix'=>'admin'],function(){
         Route::post('replymail/{id}',[ContactController::class,'replymail']);
         Route::get('destroy/{id}',[ContactController::class,'destroy']);
     });
-
-
+    
+    
     Route::group(['prefix'=>'faq'],function(){
         Route::get('create',[FaqController::class,'create']);
         Route::post('store',[FaqController::class,'store']);
         Route::get('show',[FaqController::class,'show']);
+        Route::get('edit/{id}',[FaqController::class,'edit']);
+        Route::post('update/{id}',[FaqController::class,'update']);
         Route::get('destroy/{id}',[FaqController::class,'destroy']);
     });
+    
+    
+    Route::group(['prefix'=>'review'],function(){
+        Route::get('create',[ReviewController::class,'create']);
+        Route::post('store',[ReviewController::class,'store']);
+        Route::get('show',[ReviewController::class,'show']);
+        Route::get('edit/{id}',[ReviewController::class,'edit']);
+        Route::post('update/{id}',[ReviewController::class,'update']);
+        Route::get('destroy/{id}',[ReviewController::class,'destroy']);
+    });
+
 
     Route::group(['prefix'=>'category'],function(){
         Route::get('create',[CategoryController::class,'create']);
