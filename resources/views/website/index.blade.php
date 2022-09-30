@@ -2,6 +2,7 @@
 @section('content')
 @php
 $carcount = DB::table('cars')->count();
+$review = DB::table('reviews')->get();
 @endphp
 
 <section class="slider">
@@ -310,7 +311,8 @@ $carcount = DB::table('cars')->count();
                                 <img class="img-fluid" src="{{url($item->image)}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="{{url('vision/cardetail')}}/{{$item->id}}"><i class="fa-regular fa-eye"></i></a></li>
+                                        <li><a href="{{url('vision/cardetail')}}/{{$item->id}}"><i
+                                                    class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -412,7 +414,7 @@ $carcount = DB::table('cars')->count();
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-12 text-center">
-                    <h3 class="text-white">Want to know more about us? Play our promotional video now!</h3>
+                    <h3 class="text-white">Want to know more about Vision Motors?</h3>
                 </div>
             </div>
         </div>
@@ -470,7 +472,7 @@ $carcount = DB::table('cars')->count();
             <div class="col-md-12">
                 <div class="section-title">
                     <span>What Our Happy Clients say about us</span>
-                    <h2>our Testimonial </h2>
+                    <h2>our Customers </h2>
                     <div class="separator"></div>
                 </div>
             </div>
@@ -479,82 +481,28 @@ $carcount = DB::table('cars')->count();
             <div class="col-md-12">
                 <div class="owl-carousel" data-items="3" data-md-items="3" data-sm-items="2" data-xs-items="1"
                     data-space="20">
+                    <!-- class="img-fluid" -->
+                    @foreach($review as $item)
                     <div class="item">
                         <div class="testimonial-block text-center">
-                            <div class="testimonial-image">
-                                <img class="img-fluid" src="{{asset('website/images/testimonial/one.jpg')}}" alt="">
+                            <div class="testimonial-image" style="height:180px;">
+                                <img class="img-fluid" src="{{url($item->carimage)}}" alt="">
                             </div>
                             <div class="testimonial-box">
                                 <div class="testimonial-avtar">
-                                    <img class="img-fluid" src="{{asset('website/images/team/one.jpg')}}" alt="">
-                                    <h6>Alice Williams</h6>
+                                    <img class="img-fluid" src="{{url($item->picture)}}" alt="">
+                                    <h6>{{$item->name}}</h6>
+                                    <span style="color:steelblue;">{{$item->carname}}</span>
                                 </div>
                                 <div class="testimonial-content">
-                                    <p>It has survived not only five centuries. lorem Ipsum is simply dummy text of
-                                        the printin a galley
-                                        of type and bled it to make a type specimen book.</p>
+                                    <p>{{$item->review}}</p>
+                                    <span style="color:steelblue;"><span style="font-weight:bolder;">Cell :</span> {{$item->phone}}</span><br>
                                     <i class="fa fa-quote-right"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="testimonial-block text-center">
-                            <div class="testimonial-image">
-                                <img class="img-fluid" src="{{asset('website/images/testimonial/two.jpg')}}" alt="">
-                            </div>
-                            <div class="testimonial-box">
-                                <div class="testimonial-avtar">
-                                    <img class="img-fluid" src="{{asset('website/images/team/two.jpg')}}" alt="">
-                                    <h6>Michael Bean</h6>
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>A galley of type and bled it to make a type specimen book. Ipsum is simply
-                                        dummy text of the
-                                        printin It has survived not only five centuries.</p>
-                                    <i class="fa fa-quote-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-block text-center">
-                            <div class="testimonial-image">
-                                <img class="img-fluid" src="{{asset('website/images/testimonial/three.jpg')}}" alt="">
-                            </div>
-                            <div class="testimonial-box">
-                                <div class="testimonial-avtar">
-                                    <img class="img-fluid" src="{{asset('website/images/team/three.jpg')}}" alt="">
-                                    <h6>Felica Queen</h6>
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>Text of the printin a galley of type and bled it to a type specimen book. It
-                                        has survived not
-                                        only five centuries make Lorem Ipsum is simply dummy.</p>
-                                    <i class="fa fa-quote-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-block text-center">
-                            <div class="testimonial-image">
-                                <img class="img-fluid" src="{{asset('website/images/testimonial/four.jpg')}}" alt="">
-                            </div>
-                            <div class="testimonial-box">
-                                <div class="testimonial-avtar">
-                                    <img class="img-fluid" src="{{asset('website/images/team/four.jpg')}}" alt="">
-                                    <h6>Sara Lisbon</h6>
-                                </div>
-                                <div class="testimonial-content">
-                                    <p>Printin a galley of type and bled It has survived not lorem Ipsum is simply
-                                        dummy text of the it
-                                        to make a type specimen book only five centuries.</p>
-                                    <i class="fa fa-quote-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

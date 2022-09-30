@@ -7,44 +7,30 @@
         <table id="mytable" class="table">
             <thead>
                 <tr>
-                    <th>S.No</th>
-                    <th>Car</th>
-                    <th>Category</th>
-                    <th>Brand</th>
-                    <th>Year</th>
-                    <th>Type</th>
-                    <th>Mileage</th>
-                    <th>Stock</th>
-                    <th>Image</th>
-                    <th>More Images</th>
-                    <th>Action</th>
+                    <th width="5%">S.No</th>
+                    <th width="10%">Name</th>
+                    <th width="10%">Car Name</th>
+                    <th width="10%">Phone</th>
+                    <th width="40%">Review</th>
+                    <th width="10%">Customer Image</th>
+                    <th width="10%">Car Image</th>
+                    <th width="5%">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($show as $key=>$item)
-                @php
-                $image = DB::table('cars')->where('id', $item->id)->first();
-                $images = explode('|', $image->moreimage);
-                @endphp
                 <tr>
                     <td>{{++$key}}</td>
-                    <td>{{$item->car}}</td>
-                    <td>{{$item->category}}</td>
-                    <td>{{$item->brand}}</td>
-                    <td>{{$item->year}}</td>
-                    <td>{{$item->type}}</td>
-                    <td>{{$item->mi}}</td>
-                    <td>{{$item->stock}}</td>
-                    <td><img src="{{url($item->image)}}" class="rounded" width="50px" height="40px" alt=""></td>
+                    <td>{{$item->name}}</td>
+                    <td>{{$item->carname}}</td>
+                    <td>{{$item->phone}}</td>
+                    <td>{{$item->review}}</td>
+                    <td><img src="{{url($item->picture)}}" class="rounded" width="50px" height="40px" alt=""></td>
+                    <td><img src="{{url($item->carimage)}}" class="rounded" width="50px" height="40px" alt=""></td>
                     <td>
-                        @foreach($images as $items)
-                        <img src="{{URL::to($items)}}" class="rounded-circle" width="40px" height="40px" alt="">
-                        @endforeach
-                    </td>
-                    <td>
-                        <a href="{{ url('admin/car/edit')}}/{{$item->id}}"><i class="fa fa-pen"
+                        <a href="{{ url('admin/review/edit')}}/{{$item->id}}"><i class="fa fa-pen"
                                 style="font-size: 18px; padding:5px;"></i></a>
-                        <a href="{{ url('admin/car/destroy')}}/{{$item->id}}"><i class="fa fa-trash"
+                        <a href="{{ url('admin/review/destroy')}}/{{$item->id}}"><i class="fa fa-trash"
                                 style="font-size: 18px; padding:5px;"></i></a>
                     </td>
                 </tr>

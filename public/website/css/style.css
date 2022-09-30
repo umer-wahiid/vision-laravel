@@ -3000,7 +3000,7 @@ select {
 
 .testimonial-1 .testimonial-block .testimonial-avtar h6 {
   display: block;
-  font-weight: normal;
+  font-weight: bolder;
   text-transform: capitalize;
   color: steelblue;
   margin-bottom: 0px;
@@ -3012,7 +3012,7 @@ select {
 }
 
 .testimonial-1 .testimonial-block .testimonial-content {
-  margin-top: 20px;
+  margin-top: 10px;
   color: #999999;
 }
 
@@ -3654,7 +3654,7 @@ select {
 }
 
 .play-video .video-info:before {
-  background: rgba(219, 45, 46, 0.8);
+  background: rgba(70, 131, 180, 0.63);
   content: "";
   height: 100%;
   left: 0;

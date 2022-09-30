@@ -26,7 +26,7 @@ use App\Http\Controllers\ReviewController;
 
 Route::get('/',[WebsiteController::class,'index']);
 Route::get('/login',[AuthController::class,'create']);
-Route::get('/1001@s@i@g@n@u@p',[AuthController::class,'signup']);
+Route::get('/signup',[AuthController::class,'signup']);
 Route::get('/logout',[AuthController::class,'logout']);
 Route::post('/storelogin',[AuthController::class,'storelogin']);
 Route::post('/store',[AuthController::class,'store']);
