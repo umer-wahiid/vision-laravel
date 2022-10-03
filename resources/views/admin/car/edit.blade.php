@@ -62,11 +62,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align:center;padding-top:14px;text-align:left;"><b>Mileage</b></td>
+                    <td style="text-align:center;padding-top:14px;text-align:left;"><b>Kilometer</b></td>
                     <td>
-                        <input style="border:1px solid steelblue;" type="text" required name="mi" value="{{$edit->mi}}" placeholder="Mileage"
+                        <input style="border:1px solid steelblue;" type="text" required name="km" value="{{$edit->mi}}" placeholder="Mileage"
                             class="form-control input">
-                        <span class="text-danger">@error('mi'){{$message}}@enderror</span>
+                        <span class="text-danger">@error('km'){{$message}}@enderror</span>
                     </td>
                 </tr>
                 <tr>

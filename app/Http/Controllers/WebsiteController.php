@@ -96,7 +96,7 @@ class WebsiteController extends Controller
         'cars.car',
         'cars.id',
         'cars.year',
-        'cars.mi',
+        'cars.km',
         'cars.type',
         'cars.price',
         'cars.stock',

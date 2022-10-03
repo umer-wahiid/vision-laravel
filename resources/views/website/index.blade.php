@@ -320,7 +320,7 @@ $review = DB::table('reviews')->get();
                                 <ul class="list-inline">
                                     <li><i class="fa fa-registered"></i> {{$item->year}}</li>
                                     <li><i class="fa fa-cog"></i> {{$item->type}}</li>
-                                    <li><i class="fa fa-dashboard"></i> {{$item->mi}} mi</li>
+                                    <li><i class="fa fa-dashboard"></i> {{$item->km}} km</li>
                                 </ul>
                             </div>
                             <div class="car-content">
@@ -353,7 +353,7 @@ $review = DB::table('reviews')->get();
                 <div class="custom-block-1">
                     <h2 style="font-size: 60px;">Range Rover</h2>
                     <span>Get the Rover You always Wanted </span>
-                    <strong class="text-red">Best Price</strong>
+                    <strong class="text-red">Limited Offer</strong>
                     <span>Best Price</span>
                     <span>Latest Model</span>
                     <p>Limited time Offer!</p>

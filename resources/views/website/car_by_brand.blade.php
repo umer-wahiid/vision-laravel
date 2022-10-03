@@ -43,7 +43,7 @@
                                 <ul class="list-inline">
                                     <li><i class="fa fa-registered"></i>{{$item->year}}</li>
                                     <li><i class="fa fa-cog"></i>{{$item->type}}</li>
-                                    <li><i class="fa fa-shopping-cart"></i> {{$item->mi}} mi</li>
+                                    <li><i class="fa fa-shopping-cart"></i> {{$item->km}} km</li>
                                 </ul>
                             </div>
                             <div class="car-content">

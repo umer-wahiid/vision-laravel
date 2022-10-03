@@ -60,10 +60,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align:center;padding-top:14px;text-align:left;"><b>Mileage</b></td>
+                    <td style="text-align:center;padding-top:14px;text-align:left;"><b>Kilometer</b></td>
                     <td>
-                        <input type="text" style="border:1px solid steelblue;" required name="mi" placeholder="Mileage" class="form-control input">
-                        <span class="text-danger">@error('mi'){{$message}}@enderror</span>
+                        <input type="text" style="border:1px solid steelblue;" required name="km" placeholder="Mileage" class="form-control input">
+                        <span class="text-danger">@error('km'){{$message}}@enderror</span>
                     </td>
                 </tr>
                 <tr>

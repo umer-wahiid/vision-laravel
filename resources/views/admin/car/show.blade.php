@@ -13,7 +13,7 @@
                     <th>Brand</th>
                     <th>Year</th>
                     <th>Type</th>
-                    <th>Mileage</th>
+                    <th>Kilometer</th>
                     <th>Stock</th>
                     <th>Image</th>
                     <th>More Images</th>
@@ -33,7 +33,7 @@
                     <td>{{$item->brand}}</td>
                     <td>{{$item->year}}</td>
                     <td>{{$item->type}}</td>
-                    <td>{{$item->mi}}</td>
+                    <td>{{$item->km}}</td>
                     <td>{{$item->stock}}</td>
                     <td><img src="{{url($item->image)}}" class="rounded" width="50px" height="40px" alt=""></td>
                     <td>

@@ -52,7 +52,7 @@ class CarController extends Controller
                 'car'=>'required|unique:cars',
                 'year'=>'required',
                 'type'=>'required',
-                'mi'=>'required',
+                'km'=>'required',
                 'price'=>'required',
                 'stock'=>'required',
                 'image'=>'required',
@@ -82,7 +82,7 @@ class CarController extends Controller
             $create->car = $request->car;
             $create->year = $request->year;
             $create->type = $request->type;
-            $create->mi = $request->mi;
+            $create->km = $request->km;
             $create->price = $request->price;
             $create->stock = $request->stock;
             $create->image = $path;
@@ -108,7 +108,7 @@ class CarController extends Controller
             $show = DB::table('categories')
             ->join('cars','cars.category_id','=','categories.id')
             ->join('brands','brands.id','=','cars.brand_id')
-            ->select('cars.id','cars.car','categories.category','brands.brand','cars.year','cars.type','cars.mi','cars.price','cars.stock','cars.image')
+            ->select('cars.id','cars.car','categories.category','brands.brand','cars.year','cars.type','cars.km','cars.price','cars.stock','cars.image')
             ->get();
             // $image = DB::table('cars')->where('id', )->first();
             // $images = explode('|', $image->moreimage);
@@ -169,7 +169,7 @@ class CarController extends Controller
             'car'=>'required|unique:cars',
             'year'=>'required',
             'type'=>'required',
-            'mi'=>'required',
+            'km'=>'required',
             'price'=>'required',
             'stock'=>'required',
         ]);
@@ -184,7 +184,7 @@ class CarController extends Controller
         $create->car = $request->car;
         $create->year = $request->year;
         $create->type = $request->type;
-        $create->mi = $request->mi;
+        $create->km = $request->km;
         $create->price = $request->price;
         $create->stock = $request->stock;
         // $create->image = $path;

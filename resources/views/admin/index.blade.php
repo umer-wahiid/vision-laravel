@@ -12,7 +12,7 @@ $message = DB::table('contacts')->orderBy('created_at', 'desc')->limit(4)->get()
 $cars = DB::table('categories')
 ->join('cars','cars.category_id','=','categories.id')
 ->join('brands','brands.id','=','cars.brand_id')
-->select('cars.id','cars.created_at','cars.car','categories.category','brands.brand','cars.year','cars.type','cars.mi','cars.price','cars.stock','cars.image')
+->select('cars.id','cars.created_at','cars.car','categories.category','brands.brand','cars.year','cars.type','cars.km','cars.price','cars.stock','cars.image')
 ->orderBy('created_at', 'desc')->limit(5)->get();
 
 

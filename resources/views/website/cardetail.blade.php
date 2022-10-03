@@ -80,7 +80,7 @@ $category = DB::table('categories')->get();
                             <li> <span>Model</span> <strong class="text-end">7-series</strong></li>
                             <li> <span>Registration Year </span> <strong class="text-end">{{$cars[0]->year}}</strong>
                             </li>
-                            <li> <span>Mileage</span> <strong class="text-end">{{$cars[0]->mi}} mi</strong></li>
+                            <li> <span>Kilometer</span> <strong class="text-end">{{$cars[0]->km}} km</strong></li>
                             <li> <span>Condition</span> <strong class="text-end">New</strong></li>
                             <li> <span>Exterior Color</span> <strong class="text-end">Silver</strong></li>
                             <li> <span>Interior Color</span> <strong class="text-end">Brown (Leather)</strong></li>
