@@ -3791,11 +3791,11 @@ select {
 }
 
 .social ul li:hover a.twitter {
-  background: #41d1da;
+  background: #41aada;
 }
 
 .social ul li:hover a.pinterest {
-  background: #c3222b;
+  background: #f73686;
 }
 
 .social ul li:hover a.dribbble {
@@ -3803,7 +3803,7 @@ select {
 }
 
 .social ul li:hover a.google-plus {
-  background: steelblue;
+  background: rgb(66, 170, 24);
 }
 
 .social ul li:hover a.behance {

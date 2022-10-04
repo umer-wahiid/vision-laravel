@@ -127,9 +127,8 @@
                     </div>
                     <div class="content">
                         <h6>opening hours </h6>
-                        <p>Voluptatem accusanoremque sed ut perspiciatis unde omnis iste natus error sit laudantium,
-                            totam rem
-                            aperiam. </p>
+                        <p>Our Opening Hours Are 12pm to 8pm.
+                            We Are Closed On Sundays</p>
                     </div>
                 </div>
             </div>
@@ -140,7 +139,7 @@
                     </div>
                     <div class="content">
                         <h6>Our Support Center </h6>
-                        <p>Iste natus error sit sed ut perspiciatis unde omnis voluptatem laudantium, totam rem aperiam.
+                        <p>Feel free to ask any queries, we are available 24/7.
                         </p>
                     </div>
                 </div>
@@ -152,8 +151,7 @@
                     </div>
                     <div class="content">
                         <h6>Some Information </h6>
-                        <p class="mb-0">Totam rem aperiam sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            laudantium.</p>
+                        <p class="mb-0">Vision Motors Offers All Kind Of Japanese Cars Regardless of Price Range And Size.</p>
                     </div>
                 </div>
             </div>

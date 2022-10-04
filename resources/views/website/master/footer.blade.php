@@ -10,13 +10,12 @@
             <div class="col-md-12">
                 <div class="social">
                     <ul>
-                        <li><a class="facebook" href="#">facebook <i class="fa-brands fa-facebook-f"></i> </a></li>
-                        <li><a class="twitter" href="#">twitter <i class="fa-brands fa-twitter"></i> </a></li>
-                        <li><a class="pinterest" href="#">pinterest <i class="fa-brands fa-pinterest-p"></i> </a></li>
-                        <li><a class="dribbble" href="#">dribbble <i class="fa-brands fa-dribbble"></i> </a></li>
-                        <li><a class="google-plus" href="#">google plus <i class="fa-brands fa-google-plus-g"></i></a>
+                        <li><a class="facebook" href="https://www.facebook.com/visionmotorspk">facebook <i class="fa-brands fa-facebook-f"></i> </a></li>
+                        <li><a class="twitter" href="https://twitter.com/ImranKhanPTI">twitter <i class="fa-brands fa-twitter"></i> </a></li>
+                        <li><a class="pinterest" href="https://www.instagram.com/vision.motors/">Instagram <i class="fa-brands fa-instagram"></i> </a></li>
+                        <li><a class="google-plus" href="https://www.whatsapp.com/">WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
                         </li>
-                        <li><a class="behance" href="#">behance <i class="fa-brands fa-behance"></i></a></li>
+                        <li><a class="behance" href="{{url('vision/contact')}}">Email <i class="fa-sharp fa-solid fa-envelope"></i></a></li>
                     </ul>
                 </div>
             </div>
