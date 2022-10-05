@@ -43,7 +43,7 @@ class ContactController extends Controller
         
         Mail::to($email)->send(new Reply(($name),($email),($phone),($message)));
         $show = Contact::get();
-        return view ('admin.contact.show',['show'=>$show]);
+        return view ('admin.contact.show',['show'=>$show]); 
     }
     /**
      * Store a newly created resource in storage.
