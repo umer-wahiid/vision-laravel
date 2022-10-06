@@ -45,4 +45,8 @@ class Reply extends Mailable
     {
         return $this->from('visionmotors@gmail.com')->markdown('admin.mailview');
     }
+    // public function build()
+    // {
+    //     return $this->from('vision@visionmotors.pk')->markdown('admin.mailview');
+    // }
 }

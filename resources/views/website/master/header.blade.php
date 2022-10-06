@@ -95,35 +95,35 @@
                                 <ul class="menu-links" style="margin-top: 25px;">
                                     <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{url('/')}}">
                                             Home</a></li>
-                                    <li class="{{ request()->is('vision/cars*') ? 'active' : '' }}"><a
-                                            href="{{url('vision/cars')}}">Cars</a>
+                                    <li class="{{ request()->is('cars*') ? 'active' : '' }}"><a
+                                            href="{{url('/cars')}}">Cars</a>
                                     </li>
-                                    <li class="{{ request()->is('vision/car_by_category*') ? 'active' : '' }}"><a
-                                            href="{{url('vision/cars')}}">Category</a>
+                                    <li class="{{ request()->is('car_by_category*') ? 'active' : '' }}"><a
+                                            href="{{url('/cars')}}">Category</a>
                                         <ul class="drop-down-multilevel">
                                             @foreach($cat_id as $item)
                                             <li><a
-                                                    href="{{url('vision/car_by_category')}}/{{$item->id}}">{{$item->category}}</a>
+                                                    href="{{url('/car_by_category')}}/{{$item->id}}">{{$item->category}}</a>
                                             </li>
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li class="{{ request()->is('vision/car_by_brand*') ? 'active' : '' }}"><a
-                                            href="{{url('vision/cars')}}">Brand</a>
+                                    <li class="{{ request()->is('car_by_brand*') ? 'active' : '' }}"><a
+                                            href="{{url('/cars')}}">Brand</a>
                                         <ul class="drop-down-multilevel">
                                             @foreach($brand_id as $item)
                                             <li><a
-                                                    href="{{url('vision/car_by_brand')}}/{{$item->id}}">{{$item->brand}}</a>
+                                                    href="{{url('/car_by_brand')}}/{{$item->id}}">{{$item->brand}}</a>
                                             </li>
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li class="{{ request()->is('vision/about*') ? 'active' : '' }}"><a
-                                            href="{{url('vision/about')}}">About</a></li>
-                                    <li class="{{ request()->is('vision/contact*') ? 'active' : '' }}"><a
-                                            href="{{url('vision/contact')}}"> Contact</a>
-                                    <li class="{{ request()->is('vision/faqs*') ? 'active' : '' }}"><a
-                                            href="{{url('vision/faqs')}}">FAQs</a></li>
+                                    <li class="{{ request()->is('about*') ? 'active' : '' }}"><a
+                                            href="{{url('/about')}}">About</a></li>
+                                    <li class="{{ request()->is('contact*') ? 'active' : '' }}"><a
+                                            href="{{url('/contact')}}"> Contact</a>
+                                    <li class="{{ request()->is('faqs*') ? 'active' : '' }}"><a
+                                            href="{{url('/faqs')}}">FAQs</a></li>
                                 </ul>
                             </div>
                         </div>

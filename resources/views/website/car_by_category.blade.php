@@ -35,7 +35,7 @@
                                 <img class="img-fluid" src="{{URL($item->image)}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="{{url('vision/cardetail')}}/{{$item->id}}"><i class="fa-regular fa-eye"></i></a>
+                                        <li><a href="{{url('/cardetail')}}/{{$item->id}}"><i class="fa-regular fa-eye"></i></a>
                                         </li>
                                     </ul>
                                 </div>

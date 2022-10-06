@@ -14,7 +14,7 @@ $category = DB::table('categories')->get();
                 <ul class="page-breadcrumb">
                     <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a> <i
                             class="fa fa-angle-double-right"></i></li>
-                    <li><a href="{{url('vision/cars')}}">Cars</a><i class="fa fa-angle-double-right"></i></li>
+                    <li><a href="{{url('/cars')}}">Cars</a><i class="fa fa-angle-double-right"></i></li>
                     <li><span>{{$cars[0]->car}}</span> </li>
                 </ul>
             </div>

@@ -52,8 +52,8 @@ $review = DB::table('reviews')->get();
                             color: rgba(255, 255, 255, 1.00);font-family:Open Sans;text-align:center;text-transform:uppercase;
                             background-color:steelblue;padding:12px 20px 12px 20px;border-color:rgba(0, 0, 0, 1.00);
                             outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
-                            cursor:pointer;" href="{{url('vision/about')}}">
-                            learn more </a></div>
+                            cursor:pointer;" href="{{url('/about')}}">
+                            Read More </a></div>
 
 
                     <!-- IMAGES -->
@@ -139,7 +139,7 @@ $review = DB::table('reviews')->get();
                             color: rgba(255, 255, 255, 1.00);font-family:Open Sans;text-align:center;text-transform:uppercase;
                             background-color:steelblue;padding:12px 20px 12px 20px;border-color:rgba(0, 0, 0, 1.00);outline:none;
                             box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;
-                            cursor:pointer;" href="{{url('vision/about')}}"> learn more </a>
+                            cursor:pointer;" href="{{url('/about')}}"> Read More </a>
                     </div>
 
 
@@ -311,7 +311,7 @@ $review = DB::table('reviews')->get();
                                 <img class="img-fluid" src="{{url($item->image)}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="{{url('vision/cardetail')}}/{{$item->id}}"><i
+                                        <li><a href="{{url('/cardetail')}}/{{$item->id}}"><i
                                                     class="fa-regular fa-eye"></i></a></li>
                                     </ul>
                                 </div>
@@ -357,7 +357,7 @@ $review = DB::table('reviews')->get();
                     <span>Best Price</span>
                     <span>Latest Model</span>
                     <p>Limited time Offer!</p>
-                    <a href="{{url('vision/cars')}}"> read more </a>
+                    <a href="{{url('/cars')}}"> read more </a>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@ $review = DB::table('reviews')->get();
                             options and most of all, personal feedback on your queries and suggestions.
                             We believe in customer's satisfaction as our success depends on your success.</p>
                         <p>So, What Are You Waiting For !</p>
-                        <a class="button border" href="{{URL('vision/cars')}}">Buy Your Dream Car</a>
+                        <a class="button border" href="{{URL('/cars')}}">Buy Your Dream Car</a>
                     </div>
                 </div>
             </div>

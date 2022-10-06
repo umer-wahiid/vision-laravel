@@ -67,7 +67,7 @@ class ContactController extends Controller
             $create->message = $request->message;
             $create->save();
             
-            return redirect('vision/contact');
+            return redirect('/contact');
     }
     
     /**

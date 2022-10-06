@@ -34,7 +34,7 @@ class AuthController extends Controller
 
     public function signup()
     {
-        return view ('admin.signup');
+        return view ('admin.users.create');
     }
 
     /**
@@ -63,7 +63,7 @@ class AuthController extends Controller
         $create->image = $path;
         $create->save();
 
-        return redirect('/login');
+        return redirect('admin/users/show');
     }
 
 
@@ -104,12 +104,16 @@ class AuthController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(user $user)
     {
-        // $show =DB::table('roles')
-        // ->join('users','users.role_id','=','roles.id')
-        // ->get();
-        // return view ('admin.users',['show'=>$show]);
+        if(Auth::user()){
+            $show =DB::table('users')
+            ->get();
+            return view ('admin.users.show',['show'=>$show]);
+        }
+        else{
+            return redirect('/');
+        }
     }
 
     /**
@@ -143,6 +147,13 @@ class AuthController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Auth::user()){
+            $delete = User::find($id);
+            $delete->delete();
+            return redirect('admin/users/show');
+        }
+        else{
+            return redirect('/');
+        }
     }
 }

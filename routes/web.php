@@ -26,21 +26,17 @@ use App\Http\Controllers\ReviewController;
 
 Route::get('/',[WebsiteController::class,'index']);
 Route::get('/login',[AuthController::class,'create']);
-Route::get('/signup',[AuthController::class,'signup']);
 Route::get('/logout',[AuthController::class,'logout']);
 Route::post('/storelogin',[AuthController::class,'storelogin']);
 Route::post('/store',[AuthController::class,'store']);
 
-
-Route::group(['prefix'=>'vision'],function(){
-    Route::get('contact',[WebsiteController::class,'contact']);
-    Route::get('cars',[WebsiteController::class,'cars']);
-    Route::get('about',[WebsiteController::class,'about']);
-    Route::get('faqs',[WebsiteController::class,'faqs']); 
-    Route::get('car_by_category/{id}',[WebsiteController::class,'car_by_category']);
-    Route::get('car_by_brand/{id}',[WebsiteController::class,'car_by_brand']);
-    Route::get('cardetail/{id}',[WebsiteController::class,'cardetail']);
-});
+Route::get('contact',[WebsiteController::class,'contact']);
+Route::get('cars',[WebsiteController::class,'cars']);
+Route::get('about',[WebsiteController::class,'about']);
+Route::get('faqs',[WebsiteController::class,'faqs']); 
+Route::get('car_by_category/{id}',[WebsiteController::class,'car_by_category']);
+Route::get('car_by_brand/{id}',[WebsiteController::class,'car_by_brand']);
+Route::get('cardetail/{id}',[WebsiteController::class,'cardetail']);
 
 
 Route::group(['prefix'=>'admin'],function(){
@@ -48,6 +44,14 @@ Route::group(['prefix'=>'admin'],function(){
     
     Route::get('/',[adminController::class,'index']);
     
+    Route::group(['prefix'=>'users'],function(){
+        Route::get('create',[AuthController::class,'signup']);
+        Route::post('store',[AuthController::class,'store']);
+        Route::get('show',[AuthController::class,'show']);
+        Route::get('reply/{id}',[AuthController::class,'reply']);
+        Route::post('replymail/{id}',[AuthController::class,'replymail']);
+        Route::get('destroy/{id}',[AuthController::class,'destroy']);
+    });
     
     Route::group(['prefix'=>'contact'],function(){
         Route::post('store',[ContactController::class,'store']);

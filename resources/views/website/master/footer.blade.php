@@ -15,7 +15,7 @@
                         <li><a class="pinterest" href="https://www.instagram.com/vision.motors/">Instagram <i class="fa-brands fa-instagram"></i> </a></li>
                         <li><a class="google-plus" href="https://www.whatsapp.com/">WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
                         </li>
-                        <li><a class="behance" href="{{url('vision/contact')}}">Email <i class="fa-sharp fa-solid fa-envelope"></i></a></li>
+                        <li><a class="behance" href="{{url('/contact')}}">Email <i class="fa-sharp fa-solid fa-envelope"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -41,16 +41,16 @@
                     <ul>
                         <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{url('/')}}"><i
                                     class="fa-solid fa-angles-right"></i> Home</a></li>
-                        <li><a class="{{ request()->is('vision/contact*') ? 'active' : '' }}"
-                                href="{{url('vision/contact')}}"><i class="fa-solid fa-angles-right"></i> Contact Us</a>
+                        <li><a class="{{ request()->is('contact*') ? 'active' : '' }}"
+                                href="{{url('/contact')}}"><i class="fa-solid fa-angles-right"></i> Contact Us</a>
                         </li>
-                        <li><a class="{{ request()->is('vision/about*') ? 'active' : '' }}"
-                                href="{{url('vision/about')}}"><i class="fa-solid fa-angles-right"></i> About Us</a>
+                        <li><a class="{{ request()->is('about*') ? 'active' : '' }}"
+                                href="{{url('/about')}}"><i class="fa-solid fa-angles-right"></i> About Us</a>
                         </li>
-                        <li><a class="{{ request()->is('vision/car*') ? 'active' : '' }}"
-                                href="{{url('vision/cars')}}"><i class="fa-solid fa-angles-right"></i> Cars</a></li>
-                        <li><a class="{{ request()->is('vision/faqs*') ? 'active' : '' }}"
-                                href="{{url('vision/faqs')}}"><i class="fa-solid fa-angles-right"></i> FAQs</a></li>
+                        <li><a class="{{ request()->is('car*') ? 'active' : '' }}"
+                                href="{{url('/cars')}}"><i class="fa-solid fa-angles-right"></i> Cars</a></li>
+                        <li><a class="{{ request()->is('faqs*') ? 'active' : '' }}"
+                                href="{{url('/faqs')}}"><i class="fa-solid fa-angles-right"></i> FAQs</a></li>
                     </ul>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                         Managed by the most experienced industry personnel.</p>
                     <form class="news-letter">
                         <!-- <input type="email" placeholder="Enter your Email" class="form-control placeholder"> -->
-                        <a class="button red" href="{{url('vision/about')}}">About Us</a>
+                        <a class="button red" href="{{url('/about')}}">About Us</a>
                     </form>
                 </div>
             </div>

@@ -71,6 +71,14 @@ $message = DB::table('contacts')
                     <a href="{{url('admin/car/show')}}" class="dropdown-item">View Car</a>
                 </div>
             </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle {{ request()->is('admin/users/*') ? 'active' : '' }}"
+                    data-bs-toggle="dropdown"><i class="fa fa-user me-2"></i>Admin</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="{{url('admin/users/create')}}" class="dropdown-item">Add Admin</a>
+                    <a href="{{url('admin/users/show')}}" class="dropdown-item">View Admin</a>
+                </div>
+            </div>
         </div>
     </nav>
 </div>

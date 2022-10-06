@@ -134,8 +134,10 @@ video for guidance : https://www.youtube.com/watch?v=xigpoxOW1MY
 
 
 
-
-
+--.env
+--mailview.blade.php
+--reply.php
+--index.php
 
 
 
