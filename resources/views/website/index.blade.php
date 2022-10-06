@@ -273,7 +273,7 @@ $review = DB::table('reviews')->get();
         <div class="row">
             <div class="col-md-12">
                 <div class="halp-call text-center">
-                    <img class="img-fluid" src="{{asset('website/images/team/one.jpg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('website/revolution/assets/square.jpg')}}" alt="">
                     <span>Have any question ?</span>
                     <h2 class="text-red">0345-3017675</h2>
                 </div>

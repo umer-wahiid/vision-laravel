@@ -55,7 +55,7 @@
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <a href="index.html" class="">
-                                <h3 class="text-primary"><img src="{{asset('website/images/icon.png')}}" width="45px"
+                                <h3 class="text-primary"><img src="{{asset('website/images/icon2.png')}}" width="45px"
                                         height="45px" alt=""><span style="padding-left:10px;"> Vision Motors</span></h3>
                             </a>
                         </div>
