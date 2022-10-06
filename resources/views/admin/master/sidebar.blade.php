@@ -9,7 +9,7 @@ $message = DB::table('contacts')
 <div class="sidebar pe-4 pb-3">
     <nav class="navbar bg-secondary navbar-dark">
         <a href="{{url('admin')}}" class="navbar-brand mx-4 mb-3">
-            <h3 class="text-primary"><img src="{{asset('website/images/icon.png')}}" width="30px" height="30px" alt="">
+            <h3 class="text-primary"><img src="{{asset('website/images/icon2.png')}}" width="30px" height="30px" alt="">
                 Vision<span style="color:white;">Motors</span></h3>
             <!-- <i class="fa fa-user-edit me-2"></i> -->
         </a>
