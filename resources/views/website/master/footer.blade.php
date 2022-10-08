@@ -89,7 +89,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="text-lg-start text-center">
-                        <p>© Copyright 2022 Vision Motors Developed by <a href="" target="_blank">Umer Abdul Wahid</a>
+                        <p>© Copyright 2022 Vision Motors Developed by <a href="https://www.umerabdulwahid.ml/" target="_blank">Umer Abdul Wahid</a>
                         </p>
                     </div>
                 </div>

@@ -1,6 +1,17 @@
 @extends('website.master.main')
 @section('content')
+<style>
+.car-item .car-image img {
+    width: 100%;
+}
 
+@media(max-width:991px) {
+    .car-item .car-image img {
+        width: 100%;
+        height: 20.5vh;
+    }
+}
+</style>
 <section class="inner-intro bg-1 bg-overlay-black-70">
     <div class="container">
         <div class="row text-center intro-title">
@@ -9,7 +20,8 @@
             </div>
             <div class="col-md-6 text-md-end float-end">
                 <ul class="page-breadcrumb">
-                    <li><a href="{{url('/')}}"><i class="fa fa-home"></i>Home</a> <i class="fa fa-angle-double-right"></i>
+                    <li><a href="{{url('/')}}"><i class="fa fa-home"></i>Home</a> <i
+                            class="fa fa-angle-double-right"></i>
                     </li>
                     <li><span>Cars</span></li>
                 </ul>
@@ -28,7 +40,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-8">
-                <div class="row">
+                <div class="row"  style="display:flex; justify-content:center;align-items:center;">
                     @foreach($car as $item)
                     <div class="col-lg-4 col-sm-6" style="width:280px;">
                         <div class="car-item gray-bg text-center">
@@ -36,7 +48,8 @@
                                 <img class="img-fluid" src="{{URL($item->image)}}" alt="">
                                 <div class="car-overlay-banner">
                                     <ul>
-                                        <li><a href="{{url('/cardetail')}}/{{$item->id}}"><i class="fa-regular fa-eye"></i></a>
+                                        <li><a href="{{url('/cardetail')}}/{{$item->id}}"><i
+                                                    class="fa-regular fa-eye"></i></a>
                                         </li>
                                     </ul>
                                 </div>
