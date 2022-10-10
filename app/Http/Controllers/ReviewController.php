@@ -48,11 +48,11 @@ class ReviewController extends Controller
                 'carimage'=>'required',
                 'picture'=>'required',
             ]);
-
+            $cusname = $request->name;
             $customer = $request->file('picture')->getClientOriginalName();
-            $customerpath = $request->file('picture')->move('dashboard/review');
+            $customerpath = $request->file('picture')->move('dashboard/review/'.$cusname.'/');
             $car = $request->file('carimage')->getClientOriginalName();
-            $carpath = $request->file('carimage')->move('dashboard/review');
+            $carpath = $request->file('carimage')->move('dashboard/review/'.$cusname.'/');
 
             $create = new review();
             $create->name = $request->name;
