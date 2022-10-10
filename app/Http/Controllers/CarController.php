@@ -59,16 +59,16 @@ class CarController extends Controller
                 'moreimage'=>'required',
             ]);
             
-            
+            $carname = $request->car;
             $name = $request->file('image')->getClientOriginalName();
-            $path = $request->file('image')->move('dashboard/cars');
+            $path = $request->file('image')->move('dashboard/cars/'.$carname.'/');
             $image = array();
             $files = $request->file('moreimage');
             foreach ($files as $file) {
                 $image_name = md5(rand(1000, 10000));
                 $ext = strtolower ($file->getClientOriginalExtension());
                 $image_full_name = $image_name.'.'.$ext;
-                $upload_path = 'public/dashboard/cars/';
+                $upload_path = 'dashboard/cars/'.$carname.'/';
                 $image_url = $upload_path.$image_full_name;
                 $file->move($upload_path, $image_full_name);
                 $image[] = $image_url;
